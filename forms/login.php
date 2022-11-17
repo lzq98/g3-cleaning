@@ -1,13 +1,26 @@
 <?php
 session_start();
+include '../include/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input field
-  $email = $_POST['email'];
+  $email = "'" . $_POST['email'] . "'";
   $password = $_POST['password'];
-  echo $email;
-  echo $password;
-  $_SESSION['username'] = "lee";
-  header("Location:/index.php");
+  
+  $customerinfo = dbsearchall('customer', 'email', $email);
+  if (count($customerinfo) > 0) {
+    if($customerinfo[0]["password"] == $password) {
+      $_SESSION["uid"] = $customerinfo[0]["uid"];
+      $_SESSION["email"] = $customerinfo[0]["email"];
+      $_SESSION["username"] = $customerinfo[0]["username"];
+      $_SESSION["name"] = $customerinfo[0]["name"];
+      $_SESSION["phone"] = $customerinfo[0]["phone"];
+      header("Location:/index.php");
+    } else {
+      echo "wrong password";
+    }
+  }else{
+    echo "Email not found";
+  }
 } else {
   echo "This page can only accessed by POST method.";
   header("Location:/login.php");

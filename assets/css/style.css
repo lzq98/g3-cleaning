@@ -1211,6 +1211,75 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Order history
+--------------------------------------------------------------*/
+.history .history-list {
+  padding: 0 100px;
+}
+.history .history-list ul {
+  padding: 0;
+  list-style: none;
+}
+.history .history-list li + li {
+  margin-top: 15px;
+}
+.history .history-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+.history .history-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+.history .history-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #47b2e4;
+}
+.history .history-list .icon-show, .history .history-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.history .history-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+.history .history-list .icon-show {
+  display: none;
+}
+.history .history-list a.collapsed {
+  color: #37517e;
+  transition: 0.3s;
+}
+.history .history-list a.collapsed:hover {
+  color: #47b2e4;
+}
+.history .history-list a.collapsed .icon-show {
+  display: inline-block;
+}
+.history .history-list a.collapsed .icon-close {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .history .history-list {
+    padding: 0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact .info {

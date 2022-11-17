@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
 
 <head>
     <meta charset="utf-8">
@@ -65,7 +64,10 @@
         </div>
     </section><!-- End Contact Section -->
     <?php
+        }else{
+            header("Location:/index.php");
         }
+        
         ?>
 
     </main><!-- End #main -->

@@ -1,4 +1,5 @@
 <!-- ======= Header ======= -->
+<?php session_start(); ?>
 <header id="header" class="fixed-top ">
   <div class="container d-flex align-items-center">
 
@@ -29,7 +30,7 @@
                 <li><a href="#">Deep Drop Down 5</a></li>
               </ul>
             </li>
-            <li><a href="#">Order history</a></li>
+            <li><a href="orderhistory.php">Order history</a></li>
             <li><a href="#">Customer support</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
