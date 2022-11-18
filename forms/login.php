@@ -3,8 +3,8 @@ session_start();
 include '../include/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input field
-  $email = "'" . $_POST['email'] . "'";
-  $password = $_POST['password'];
+  $email = "'" . filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) . "'"; // SQL injection sanitizer
+  $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING); // SQL injection sanitizer
   
   $customerinfo = dbsearchall('customer', 'email', $email);
   if (count($customerinfo) > 0) {
