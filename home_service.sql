@@ -34,7 +34,7 @@ CREATE TABLE `customer` (
   `name` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- 转存表中的数据 `customer`
@@ -59,7 +59,7 @@ CREATE TABLE `orders` (
   `job` varchar(300) NOT NULL,
   `comment` varchar(300) NOT NULL,
   `price` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,7 @@ CREATE TABLE `worker` (
   `phone` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL,
   `healthy` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- 转储表的索引
