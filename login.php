@@ -54,7 +54,7 @@ if (isset($_SESSION["username"])){
                 <div class="col-lg-2 d-flex align-items-center">
                 </div>
                 <div class="col-lg-8 d-flex align-items-center">
-                    <form action="forms/login.php" method="post" role="form" class="php-email-form">
+                    <form action="forms/login.php" method="post" role="form" class="php-email-form" onsubmit="checkForm()">
                         <div class="row">
                             <div class="form-group">
                                 <label for="name">Email</label>
@@ -63,7 +63,8 @@ if (isset($_SESSION["username"])){
                         </div>
                         <div class="form-group">
                             <label for="name">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" required>
+                            <input type="password" class="form-control" id="passwordplain" required>
+                            <input type="hidden" name="password" id="password" required>
                         </div>
                         <div class="my-3">
                             <div class="loading">Loading</div>
@@ -98,6 +99,15 @@ if (isset($_SESSION["username"])){
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/md5.js"></script>
+    <script>
+        function checkForm(){
+            var plainpassword = document.getElementById('passwordplain');
+            var md5password = document.getElementById('password');
+            md5password.value = md5(plainpassword.value);
+            return true;
+        }
+    </script>
 
 </body>
 
