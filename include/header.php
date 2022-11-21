@@ -10,9 +10,9 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="index.php#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
+        <li><a class="nav-link scrollto" href="index.php#about">About us</a></li>
         <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-        <li><a class="nav-link scrollto" href="index.php#portfolio">Portfolio</a></li>
+        <li><a class="nav-link scrollto" href="index.php#portfolio">Review</a></li>
         <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
         <?php if (isset($_SESSION['username'])) {
         ?>
