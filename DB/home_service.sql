@@ -21,11 +21,13 @@ CREATE TABLE IF NOT EXISTS `orders`(
   `address` varchar(100) NOT NULL,
   `city` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
-  `start` datetime NOT NULL,
-  `end` datetime,
-  `job` varchar(300),
+  `date` date NOT NULL,
+  `start` time,
+  `end` time,
+  `subject` varchar(100),
+  `message` varchar(100),
   `comment` varchar(300),
-  `rating` int NOT NULL DEFAULT 5,
+  `rating` int,
   `price` int,
   PRIMARY KEY (oid)
 );

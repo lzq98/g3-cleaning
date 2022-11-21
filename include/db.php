@@ -50,12 +50,12 @@ function dbsearchmultiple($table, $values, $key, $targets)
         }
     }
     $query .= " FROM " . sqlsanitizer($table) . " WHERE " . sqlsanitizer($key) . " IN (";
-    foreach ($targets as $index => $target){
+    foreach ($targets as $index => $target) {
         $query .= $target;
-        if ($index < count($targets)-1){
+        if ($index < count($targets) - 1) {
             $query .= ", ";
         }
-    } 
+    }
     $query .= ");";
     echo $query;
     $dbresult = mysqli_query($conn, $query);
@@ -88,9 +88,37 @@ function dbsearchall($table, $key, $target)
     return $result;
 }
 
-function insert($table, $values){
-    global $conn;
-    $query = "";
+function dbinsert($table, $values)
+// $values must be associative array
 
+{
+    global $conn;
+    $query = "INSERT INTO " . sqlsanitizer($table);
+    $keystring = "";
+    $valuestring = "";
+    $index = 0;
+    foreach ($values as $key => $value) {
+        $keystring .= sqlsanitizer($key);
+        $valuestring .= sqlsanitizer($value);
+        if ($index < count($values) - 1) {
+            $keystring .= ", ";
+            $valuestring .= ", ";
+            $index += 1;
+        }
+    }
+    $query .= "(" . $keystring . ") VALUES (" . $valuestring . ");";
+    echo $keystring;
+    echo "</br>";
+    echo $valuestring;
+    echo "</br>";
+    echo $query;
+    if ($conn->query($query) === TRUE) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+    //INSERT INTO `worker` (
+    //`email`, `name`, `phone`, `city`, `state`, `password`) VALUES
+    //('w1@test.com', 'Test worker 1', '0410000001', 'Melbourne', 'VIC', MD5('worker1'));
 }
 ?>

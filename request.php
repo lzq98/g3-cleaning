@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'include/requirelogin.php'; ?>
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -50,16 +51,6 @@
                     <form action="forms/request.php" method="post" role="form" class="php-request-form">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="email">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
                                 <label for="address">Your Address</label>
                                 <input type="text" class="form-control" name="address" id="address" required>
                             </div>
@@ -80,7 +71,7 @@
                                 <label for="city">City</label>
                                 <!--change to auto select later-->
                                 <!--do not let customer to choose-->
-                                <select class="form-control" name="address" id="address" required>
+                                <select class="form-control" name="city" id="city" required>
                                     <option value="Sydney">Sydney</option>
                                     <option value="Melbourne">Melbourne</option>
                                     <option value="Adelaide">Adelaide</option>
@@ -92,13 +83,19 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" class="form-control" name="subject" id="subject" required>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" name="date" id="date" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="form-control" name="message" rows="5" required></textarea>
+                            <textarea class="form-control" name="message" rows="5"></textarea>
                         </div>
                         <div class="my-3">
                             <div class="loading">Loading</div>
