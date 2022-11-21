@@ -33,14 +33,15 @@
 </head>
 
 <body>
-    <?php include 'include/header.php'; ?>
     <section id="headerspace" class="">
     </section>
     <?php
-        if (isset($_SESSION['username'])) {
-            session_destroy();
-        ?>
-    <!-- ======= Contact Section ======= -->
+    session_start();
+    if (isset($_SESSION['username'])) {
+        session_destroy();
+        include 'include/header.php';
+    ?>
+    <!-- ======= Logout Section ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
 
@@ -62,13 +63,15 @@
             </div>
 
         </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Logout Section -->
     <?php
-        }else{
-            header("Location:/index.php");
-        }
-        
-        ?>
+    } else {
+        // not logged in
+        header("Location:/index.php");
+        exit;
+    }
+
+    ?>
 
     </main><!-- End #main -->
 
