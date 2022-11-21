@@ -1,5 +1,7 @@
 <!-- ======= Header ======= -->
-<?php session_start(); ?>
+<?php
+include 'session.php';
+?>
 <header id="header" class="fixed-top ">
   <div class="container d-flex align-items-center">
 
