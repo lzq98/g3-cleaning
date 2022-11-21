@@ -16,17 +16,17 @@ INSERT INTO `customer` (
 ('c5@test.com', 'c5', 'Test customer 5', '0400000005', '63 Victoria Street', 'Melbourne', 'VIC', MD5('customer5'));
 
 INSERT INTO `worker` (
-  `email`, `name`, `phone`, `city`, `state`, `password`) VALUES
-('w1@test.com', 'Test worker 1', '0410000001', 'Melbourne', 'VIC', MD5('worker1'));
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w1@test.com', 'Test worker 1', '0410000001', 'Melbourne', 'VIC', 28, 4.80, MD5('worker1'));
 INSERT INTO `worker` (
-  `email`, `name`, `phone`, `city`, `state`, `password`) VALUES
-('w2@test.com', 'Test worker 2', '0410000002', 'Adelaide', 'SA', MD5('worker2'));
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w2@test.com', 'Test worker 2', '0410000002', 'Adelaide', 'SA', 25, 4.76, MD5('worker2'));
 INSERT INTO `worker` (
-  `email`, `name`, `phone`, `city`, `state`, `password`) VALUES
-('w3@test.com', 'Test worker 3', '0410000003', 'Sydney', 'NSW', MD5('worker3'));
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w3@test.com', 'Test worker 3', '0410000003', 'Sydney', 'NSW', 30, 3.92, MD5('worker3'));
 INSERT INTO `worker` (
-  `email`, `name`, `phone`, `city`, `state`, `password`) VALUES
-('w4@test.com', 'Test worker 4', '0410000004', 'Adelaide', 'SA', MD5('worker4'));
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w4@test.com', 'Test worker 4', '0410000004', 'Adelaide', 'SA', 30, 4.78, MD5('worker4'));
 INSERT INTO `worker` (
-  `email`, `name`, `phone`, `city`, `state`, `password`) VALUES
-('w5@test.com', 'Test worker 5', '0410000005', 'Sydney', 'NSW', MD5('worker5'));
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`, `healthy`) VALUES
+('w5@test.com', 'Test worker 5', '0410000005', 'Sydney', 'NSW', 40, 4.97, MD5('worker5'), false);

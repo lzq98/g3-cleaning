@@ -40,6 +40,8 @@ CREATE TABLE IF NOT EXISTS `worker` (
   `password` varchar(32) NOT NULL,
   `city` varchar(50),
   `state` varchar(50),
+  `price` int UNSIGNED NOT NULL,
+  `rating` decimal(3,2) NOT NULL DEFAULT 5.0,
   `healthy` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (uid)
 );
