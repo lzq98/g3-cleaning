@@ -13,6 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["email"] = $customerinfo[0]["email"];
       $_SESSION["username"] = $customerinfo[0]["username"];
       $_SESSION["name"] = $customerinfo[0]["name"];
+      $_SESSION["address"] = $customerinfo[0]["address"];
+      $_SESSION["city"] = $customerinfo[0]["city"];
+      $_SESSION["state"] = $customerinfo[0]["state"];
       $_SESSION["phone"] = $customerinfo[0]["phone"];
       header("Location:/index.php");
     } else {
