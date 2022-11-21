@@ -88,6 +88,42 @@ function dbsearchall($table, $key, $target)
     return $result;
 }
 
+function dbsearchmultiplecondition($table, $results, $targets)
+{
+    // when call this function, email must have quotation marks
+    global $conn;
+    $query = "SELECT ";
+
+    $index = 0;
+    foreach ($results as $result) {
+        $query .= sqlsanitizer($result);
+        if ($index < count($results) - 1) {
+            $query .= ", ";
+            $index += 1;
+        }
+    }
+
+    $query .= " FROM " . sqlsanitizer($table) . " WHERE ";
+    $index = 0;
+    foreach ($targets as $key => $value) {
+        $query .= sqlsanitizer($key) . "='" . sqlsanitizer($value) . "'";
+        if ($index < count($targets) - 1) {
+            $query .= " AND ";
+            $index += 1;
+        }
+    }
+    $query .= ";";
+    $dbresult = mysqli_query($conn, $query);
+
+    $result = [];
+    if (mysqli_num_rows($dbresult) > 0) {
+        while ($row = mysqli_fetch_assoc($dbresult)) {
+            array_push($result, $row);
+        }
+    }
+    return $result;
+}
+
 function dbinsert($table, $values)
 // $values must be associative array
 
