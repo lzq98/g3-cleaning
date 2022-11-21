@@ -1417,6 +1417,9 @@ section {
 .contact .php-email-form input {
   height: 44px;
 }
+.contact .php-email-form select {
+  height: 44px;
+}
 .contact .php-email-form textarea {
   padding: 10px 12px;
 }
@@ -1447,7 +1450,177 @@ section {
     transform: rotate(360deg);
   }
 }
-
+/*--------------------------------------------------------------
+# request
+--------------------------------------------------------------*/
+.request .info {
+  border-top: 3px solid #47b2e4;
+  border-bottom: 3px solid #47b2e4;
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+}
+.request .info i {
+  font-size: 20px;
+  color: #47b2e4;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #e7f5fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.request .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #37517e;
+}
+.request .info p {
+  padding: 0 0 10px 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #6182ba;
+}
+.request .info .email p {
+  padding-top: 5px;
+}
+.request .info .social-links {
+  padding-left: 60px;
+}
+.request .info .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+.request .info .social-links a:hover {
+  background: #47b2e4;
+  color: #fff;
+}
+.request .info .email:hover i, .request .info .address:hover i, .request .info .phone:hover i {
+  background: #47b2e4;
+  color: #fff;
+}
+.request .php-request-form {
+  width: 100%;
+  border-top: 3px solid #47b2e4;
+  border-bottom: 3px solid #47b2e4;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+.request .php-request-form .form-group {
+  padding-bottom: 8px;
+}
+.request .php-request-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+.request .php-request-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+.request .php-request-form .error-message br + br {
+  margin-top: 25px;
+}
+.request .php-request-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.request .php-request-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.request .php-request-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.request .php-request-form .form-group {
+  margin-bottom: 20px;
+}
+.request .php-request-form label {
+  padding-bottom: 8px;
+}
+.request .php-request-form input, .request .php-request-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.request .php-request-form input:focus, .request .php-request-form textarea:focus {
+  border-color: #47b2e4;
+}
+.request .php-request-form input {
+  height: 44px;
+}
+.request .php-request-form select {
+  height: 44px;
+}
+.request .php-request-form textarea {
+  padding: 10px 12px;
+}
+.request .php-request-form button[type=submit] {
+  background: #47b2e4;
+  border: 0;
+  padding: 12px 34px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+.request .php-request-form button[type=submit]:hover {
+  background: #209dd8;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/

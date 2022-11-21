@@ -36,8 +36,8 @@
     <?php include 'include/header.php'; ?>
     <section id="headerspace" class="">
     </section>
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <!-- ======= forms Section ======= -->
+    <section id="request" class="request">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -47,27 +47,57 @@
 
             <div class="row">
                 <div class="col-lg-12 d-flex align-items-center">
-                    <form action="forms/request.php" method="post" role="form" class="php-email-form">
+                    <form action="forms/request.php" method="post" role="form" class="php-request-form">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">Your Name</label>
                                 <input type="text" name="name" class="form-control" id="name" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="name">Your Email</label>
+                                <label for="email">Your Email</label>
                                 <input type="email" class="form-control" name="email" id="email" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" required>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="address">Your Address</label>
+                                <input type="text" class="form-control" name="address" id="address" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="state">State</label>
+                                <select class="form-control" name="state" id="state" required>
+                                    <option value="NSW">New South Wales</option>
+                                    <option value="VIC">Victoria</option>
+                                    <option value="SA">South Australia</option>
+                                    <option value="ACT">Australia Capital Territory</option>
+                                    <option value="WA">Western Australia</option>
+                                    <option value="QLD">Queensland</option>
+                                    <option value="TAS">Tasmania</option>
+                                    <option value="NT">Northern Territory</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="city">City</label>
+                                <!--change to auto select later-->
+                                <!--do not let customer to choose-->
+                                <select class="form-control" name="address" id="address" required>
+                                    <option value="Sydney">Sydney</option>
+                                    <option value="Melbourne">Melbourne</option>
+                                    <option value="Adelaide">Adelaide</option>
+                                    <option value="Canberra">Canberra</option>
+                                    <option value="Perth">Perth</option>
+                                    <option value="Brisbane">Brisbane</option>
+                                    <option value="Hobart">Hobart</option>
+                                    <option value="Darwin">Darwin</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="name">Subject</label>
+                            <label for="subject">Subject</label>
                             <input type="text" class="form-control" name="subject" id="subject" required>
                         </div>
                         <div class="form-group">
-                            <label for="name">Message</label>
+                            <label for="message">Message</label>
                             <textarea class="form-control" name="message" rows="5" required></textarea>
                         </div>
                         <div class="my-3">
