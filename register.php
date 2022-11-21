@@ -122,6 +122,11 @@ if (isset($_SESSION["username"])) {
                             </div>
                         </div>
                         <div class="text-center"><button type="submit" onclick="return checkForm();">Register</button></div>
+                        <div class="row">
+                            <div class="d-flex justify-content-center">
+                                <a href="login.php">Already have an account? Login now.</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

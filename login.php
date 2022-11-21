@@ -2,10 +2,11 @@
 <html lang="en">
 <?php
 session_start();
-if (isset($_SESSION["username"])){
+if (isset($_SESSION["username"])) {
     header("Location:/index.php");
     exit;
-}?>
+} ?>
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -54,7 +55,8 @@ if (isset($_SESSION["username"])){
                 <div class="col-lg-2 d-flex align-items-center">
                 </div>
                 <div class="col-lg-8 d-flex align-items-center">
-                    <form action="forms/login.php" method="post" role="form" class="php-email-form" onsubmit="checkForm()">
+                    <form action="forms/login.php" method="post" role="form" class="php-email-form"
+                        onsubmit="checkForm()">
                         <div class="row">
                             <div class="form-group">
                                 <label for="name">Email</label>
@@ -72,13 +74,16 @@ if (isset($_SESSION["username"])){
                             <div class="sent-message">Your have been logged in</div>
                         </div>
                         <div class="text-center"><button type="submit">Login</button></div>
+                        <div class="row">
+                            <div class="d-flex justify-content-center">
+                                <a href="register.php">Don't have an account? Register now.</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <div class="col-lg-2 d-flex align-items-center"> 
-                </div>
-            </div>
 
-        </div>
+
+            </div>
     </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
@@ -101,7 +106,7 @@ if (isset($_SESSION["username"])){
     <script src="assets/js/main.js"></script>
     <script src="assets/js/md5.js"></script>
     <script>
-        function checkForm(){
+        function checkForm() {
             var plainpassword = document.getElementById('passwordplain');
             var md5password = document.getElementById('password');
             md5password.value = md5(plainpassword.value);
