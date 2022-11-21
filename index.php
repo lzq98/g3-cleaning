@@ -143,7 +143,11 @@
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
                         <div class="content">
+<<<<<<< Updated upstream
                             <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+=======
+                            <h3>We provide our customers with <strong>the safest cleaning service</strong></h3>
+>>>>>>> Stashed changes
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
@@ -159,9 +163,14 @@
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                                         <p>
+<<<<<<< Updated upstream
                                             Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
                                             laoreet non curabitur gravida. Venenatis lectus magna fringilla urna
                                             porttitor rhoncus dolor purus non.
+=======
+                                            Of course you can!  G3-Cleaning aims to provid our customers with
+                                            premium quality services and best price.  With an eligible account and you are good to go!
+>>>>>>> Stashed changes
                                         </p>
                                     </div>
                                 </li>
