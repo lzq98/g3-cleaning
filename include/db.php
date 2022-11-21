@@ -107,18 +107,10 @@ function dbinsert($table, $values)
         }
     }
     $query .= "(" . $keystring . ") VALUES (" . $valuestring . ");";
-    echo $keystring;
-    echo "</br>";
-    echo $valuestring;
-    echo "</br>";
-    echo $query;
     if ($conn->query($query) === TRUE) {
         return TRUE;
     } else {
         return FALSE;
     }
-    //INSERT INTO `worker` (
-    //`email`, `name`, `phone`, `city`, `state`, `password`) VALUES
-    //('w1@test.com', 'Test worker 1', '0410000001', 'Melbourne', 'VIC', MD5('worker1'));
 }
 ?>
