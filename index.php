@@ -71,22 +71,22 @@
                 <div class="row content">
                     <div class="col-lg-6">
                         <p>
-                            G3 Cleaning was founded in Adelaide in 2022 and is exbanding with strong growth.
+                            G3 Cleaning was founded in Adelaide in 2022 and is expanding with strong growth.
                             We aim:
                         </p>
                         <ul>
                             <li><i class="ri-check-double-line"></i> To offer Adelaide house cleaning customers a premium service.</li>
-                            <li><i class="ri-check-double-line"></i> To provide a geniuine business opportunity for committed franchisees.</li>
-                            <li><i class="ri-check-double-line"></i> To protect public health under Covid-19 situation.</li>
+                            <li><i class="ri-check-double-line"></i> To provide a genuine business opportunity for committed franchisees.</li>
+                            <li><i class="ri-check-double-line"></i> To protect public health under COVID-19 situation.</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                        A professionally-trained self-employed house cleaner will strive for excellence every time.
+                        A professionally-trained,self-employed house cleaner will strive for excellence every time.
                         </p>
                         <p>
-                        Our vision is to continually offer the best quality home cleaning available in Adelaide SA.  
-                        By supporting our franchisees to become the best home cleaner they can, we are able to pursue 
+                        Our vision is to continually offer the best quality home cleaning available in Adelaide, SA. 
+                        By supporting our franchisees to become the best home cleaners they can be, we are able to pursue 
                         a higher standard of customer service and provide value to our customers every time.
                         </p>
                         <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
@@ -106,9 +106,9 @@
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
                         <div class="content">
-                            <h3>We provide our customers with <strong>the safest cleaning service</strong></h3>
+                            <h3>We provide our customers with <strong>the safest cleaning service.</strong></h3>
                             <p>
-                                COVID-19 is now a global pandemic affecting over 200 countries, 
+                                COVID-19 is now a global pandemic affecting over 200 countries 
                                 after its first recorded outbreak in December 2019.
                                 Choosing G3-Cleaning is the safest and easiest way to keep your home clean.
                             </p>
@@ -123,7 +123,7 @@
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                                         <p>
-                                            Of course you can!  G3-Cleaning aims to provid our customers with
+                                            Of course you can!  G3-Cleaning aims to provide our customers with
                                             premium quality services and best price.  With an eligible account and you are good to go!
                                         </p>
                                     </div>
@@ -131,13 +131,13 @@
 
                                 <li>
                                     <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
-                                        class="collapsed">Worried of getting infected by Covid? <i
+                                        class="collapsed">Worried of getting infected by COVID? <i
                                             class="bx bx-chevron-down icon-show"></i><i
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                                         <p>
-                                            All our providers are required to be licensed and, more importantly, Covid negative! 
-                                            You can always ask for proof of vaccination or Covid test result from your service provider!
+                                            All our providers are required to be licensed and, more importantly, COVID negative! 
+                                            You can always ask for proof of vaccination or COVID test result from your service provider!
                                             
                                         </p>
                                     </div>
@@ -233,7 +233,7 @@
 
                 <div class="section-title">
                     <h2>Services</h2>
-                    <p>High quality services at an affordable price!</p>
+                    <p>High-quality services at a reasonable cost!</p>
                 </div>
 
                 <div class="row">
@@ -241,7 +241,7 @@
                         <div class="icon-box">
                             <div class="icon"><img src= "assets/img/clean/Regular-Cleaning.png" height="200" width="200"></div>
                             <h4><a href="">Regular Cleaning</a></h4>
-                            <p>Say goodbye to your weekly cleaning chores, book now.</p>
+                            <p>Book now and say goodbye to your weekly cleaning chores.</p>
                         </div>
                     </div>
 
@@ -268,7 +268,7 @@
                         <div class="icon-box">
                             <div class="icon"><img src= "assets/img/clean/End-of-Lease.png" height="200" width="200"></div>
                             <h4><a href="">End of Lease</a></h4>
-                            <p>Moving out has never been easier with our end of lease clean.</p>
+                            <p>With our end-of-lease cleaning, moving out has never been easier.</p>
                         </div>
                     </div>
 
@@ -284,8 +284,8 @@
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-start">
                         <h3>Book To Action</h3>
-                        <p> All of our cleaners are insured and Police checked and have certified training.
-                        We can return your property to the same standard as when you moved in, 100% satisfaction guaranteed.
+                        <p> All of our cleaners are insured, police checked, and have certified training.
+                        We can restore your property to its original condition, ensuring your complete satisfaction.
                         </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
@@ -302,7 +302,7 @@
 
                 <div class="section-title">
                     <h2>Testimonials</h2>
-                    <p>G3-Cleaningaims to provide the absolute best job possible, on time, every time. 
+                    <p>G3-Cleaning aims to provide the absolute best job possible, on time, every time. 
                         We are committed to achieving customer satisfaction through the promotion of 
                         excellence in all our business processes and activities. </p>
                 </div>
