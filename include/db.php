@@ -24,7 +24,7 @@ function dbsearch($table, $values, $key, $target)
         }
     }
     $query .= " FROM " . sqlsanitizer($table) . " WHERE " . sqlsanitizer($key) . "=" . sqlsanitizer($target) . ";";
-    echo $query;
+    //echo $query;
     $dbresult = mysqli_query($conn, $query);
 
     $result = [];

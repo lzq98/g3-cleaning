@@ -32,7 +32,7 @@ include 'session.php';
                 <li><a href="#">Deep Drop Down 5</a></li>
               </ul>
             </li>
-            <li><a href="orderhistory.php">Order history</a></li>
+            <li><a href="orderhistory.php">My orders</a></li>
             <li><a href="#">Customer support</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>

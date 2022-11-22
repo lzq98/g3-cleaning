@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'include/requirelogin.php'; ?>
+<?php include 'include/db.php'; ?>
 
 <head>
     <meta charset="utf-8">
@@ -44,85 +45,188 @@
 
             <div class="section-title">
                 <h2>Order history</h2>
-                <p>Here is your order history</p>
+                <p>Here are your orders</p>
             </div>
 
+            <?php
+            if ($_SESSION['role'] == 'customer') {
+                $orders = dbsearchall("orders", "customer", $_SESSION["uid"]);
+            } elseif ($_SESSION['role'] == 'worker') {
+                $orders = dbsearchall("orders", "worker", $_SESSION["uid"]);
+            } elseif ($_SESSION['role'] == 'admin') {
+                // do it later
+                $orders = [];
+            } else {
+                // error handling
+                session_destroy();
+                echo "OOPS! something wrong happened, you have been logged out.";
+                exit;
+            }
+
+            if (count($orders) == 0) {
+                // no orders found
+                if ($_SESSION['role'] == 'customer') {
+            ?>
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <a href="searchworker.php">You don't have any orders yet, request a service now!</a>
+                </div>
+            </div>
+            <?php
+                } elseif ($_SESSION['role'] == 'worker') {
+            ?>
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <a href="claimrequest.php">You don't have any orders yet, claim a request now!</a>
+                </div>
+            </div>
+            <?php
+                }
+            } else {
+                // found orders
+            ?>
             <div class="history-list">
                 <ul>
-                    <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                            data-bs-target="#history-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="history-list-1" class="collapse show" data-bs-parent=".history-list">
-                            <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
-                                purus non.
-                            </p>
-                        </div>
-                    </li>
+                    <?php
+                $orders = array_reverse($orders);
+                $index = 1;
+                foreach ($orders as $order) {
+                    if ($order['status'] == "waiting" or $order['status'] == "ready") {
+                        $iconleft = "bx bx-time-five icon-help";
+                    } elseif ($order['status'] == "ongoing") {
+                        $iconleft = "bx bx-loader-circle icon-help";
+                    } elseif ($order['status'] == "notpaid") {
+                        $iconleft = "bx bx-info-circle icon-help";
+                    } elseif ($order['status'] == "paid") {
+                        $iconleft = "bx bx-check-circle icon-help";
+                    } elseif ($order['status'] == "canceled") {
+                        $iconleft = "bx gmdi-cancel-o icon-help";
+                    } else {
+                        $iconleft = "bx bx-help-circle icon-help";
+                    }
+                    echo '<li data-aos="fade-up" data-aos-delay="' . $index * 100 . '">';
 
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#history-list-2" class="collapsed">Feugiat scelerisque varius morbi enim
-                            nunc? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="history-list-2" class="collapse" data-bs-parent=".history-list">
-                            <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
-                                donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                cursus turpis massa tincidunt dui.
-                            </p>
-                        </div>
-                    </li>
 
-                    <li data-aos="fade-up" data-aos-delay="300">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#history-list-3" class="collapsed">Dolor sit amet consectetur adipiscing
-                            elit? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="history-list-3" class="collapse" data-bs-parent=".history-list">
-                            <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
-                                Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
-                                tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                            </p>
-                        </div>
-                    </li>
 
-                    <li data-aos="fade-up" data-aos-delay="400">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#history-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam
-                            sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                                class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="history-list-4" class="collapse" data-bs-parent=".history-list">
-                            <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
-                                est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
-                                suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                            </p>
-                        </div>
-                    </li>
+                    $title = "#" . $order['oid'] . ' ' . $order['date'] . ' ' . $order['subject'];
+                    if ($index == 1) {
+                        echo '<i class="' . $iconleft . '"></i> <a data-bs-toggle="collapse" class="collapse"
+                        data-bs-target="#history-list-1">' . $title . '<i
+                        class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="history-list-1" class="collapse show" data-bs-parent=".history-list">';
+                    } else {
+                        echo '<i class="' . $iconleft . '"></i> <a data-bs-toggle="collapse" class="collapsed"
+                        data-bs-target="#history-list-' . $index . '">' . $title . '<i
+                        class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="history-list-' . $index . '" class="collapse" data-bs-parent=".history-list">';
+                    }
+                    if ($_SESSION['role'] == 'customer') {
+                        if ($order['worker'] != '') {
+                            $workerinfo = dbsearch("worker", ["name", "phone"], "uid", $order['worker'])[0];
+                            $workername = $workerinfo['name'];
+                            $workerphone = $workerinfo['phone'];
+                        } else {
+                            $workername = "waiting for worker";
+                            $workerphone = "waiting for worker";
+                        }
 
-                    <li data-aos="fade-up" data-aos-delay="500">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                            data-bs-target="#history-list-5" class="collapsed">Tortor vitae purus faucibus ornare.
-                            Varius vel pharetra vel turpis nunc eget lorem dolor? <i
-                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                        <div id="history-list-5" class="collapse" data-bs-parent=".history-list">
-                            <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                                eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                            </p>
-                        </div>
-                    </li>
+                        echo
+                            '<div class="row">
+                                <div class="col-md-3">
+                                    <strong>Address</strong>
+                                    <p>' . $order['address'] . '</br>' . $order['city'] . '</br>' . $order['state'] . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Worker name</strong>
+                                    <p>' . $workername . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Worker phone</strong>
+                                    <p>' . $workerphone . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Status</strong>
+                                    <p>' . $order['status'] . '</p>
+                                    </br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Message</strong>
+                                    <p>' . $order['message'] . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Price</strong>
+                                    <p>' . $order['price'] . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Edit or review</strong>
+                                    <a href="orderdetail.php?order=' . $order['oid'] .
+                            '" class="btn btn-primary">Select this order</a>
+                                    </br>
+                                </div>
+                            </div>';
+                    } elseif ($_SESSION['role'] == 'worker') {
+                        $customerinfo = dbsearch("customer", ["username", "phone"], "uid", $order['customer'])[0];
+                        $customername = $customerinfo['username'];
+                        $customerphone = $customerinfo['phone'];
 
+                        echo
+                            '<div class="row">
+                                <div class="col-md-3">
+                                    <strong>Address</strong>
+                                    <p>' . $order['address'] . '</br>' . $order['city'] . '</br>' . $order['state'] . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Customer name</strong>
+                                    <p>' . $customername . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Customer phone</strong>
+                                    <p>' . $customerphone . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Status</strong>
+                                    <p>' . $order['status'] . '</p>
+                                    </br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Message</strong>
+                                    <p>' . $order['message'] . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Price</strong>
+                                    <p>' . $order['price'] . '</p>
+                                    </br>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Edit or review</strong>
+                                    <a href="orderdetail.php?order=' . $order['oid'] .
+                            '" class="btn btn-primary">Select this order</a>
+                                    </br>
+                                </div>
+                            </div>';
+                    }
+                    echo '</div></li>';
+                    $index += 1;
+                }
+                    ?>
                 </ul>
             </div>
-
+            <?php
+            }
+            ?>
         </div>
     </section><!-- End Frequently Asked Questions Section -->
 
