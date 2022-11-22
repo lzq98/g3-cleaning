@@ -12,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $values["message"] = "'" . filter_var($_POST['message'], FILTER_SANITIZE_STRING) . "'";
     if (isset($_POST["worker"])) {
         $values["worker"] = "'" . filter_var($_POST['worker'], FILTER_SANITIZE_NUMBER_INT) . "'";
+        $values["status"] = "'ready'";
+    }else{
+        $values["status"] = "'waiting'";
     }
     
     if (dbinsert("orders", $values)) {

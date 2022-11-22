@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `orders`(
   `comment` varchar(300),
   `rating` int,
   `price` int,
+  `status` varchar(10) NOT NULL,
   PRIMARY KEY (oid)
 );
 
