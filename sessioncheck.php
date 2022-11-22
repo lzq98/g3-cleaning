@@ -1,9 +1,12 @@
 <?php
-if (isset($_SESSION["username"])){
-    echo "you are already logged in";
-    echo $_SESSION["username"];
+// do not include this file when deploying
+session_start();
+if (isset($_SESSION["uid"])){
+    foreach($_SESSION as $key=>$val){
+        echo $key . ": " . $val;
+        echo "</br>";
+    }
 }else{
     echo "not logged in";
-    echo $_SESSION["username"];
 }
 ?>
