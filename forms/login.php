@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["city"] = $customerinfo[0]["city"];
       $_SESSION["state"] = $customerinfo[0]["state"];
       $_SESSION["phone"] = $customerinfo[0]["phone"];
-      $_SESSION["role"] = $customerinfo[0]["customer"];
+      $_SESSION["role"] = "customer";
       header("Location:/index.php");
     } else {
       echo "wrong password";
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["city"] = $workerinfo[0]["city"];
       $_SESSION["state"] = $workerinfo[0]["state"];
       $_SESSION["phone"] = $workerinfo[0]["phone"];
-      $_SESSION["role"] = $workerinfo[0]["worker"];
+      $_SESSION["role"] = "worker";
       header("Location:/index.php");
     } else {
       echo "wrong password";
