@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $values["state"] = "'" . filter_var($_POST['state'], FILTER_SANITIZE_STRING) . "'";
         $values["password"] = "'" . filter_var($_POST['password'], FILTER_SANITIZE_STRING) . "'";
         if (dbinsert("customer", $values)) {
-            echo "Your account has been registed successfully";
+            echo "Your account has been registered successfully";
         } else {
             echo "Register failed";
         }
