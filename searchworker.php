@@ -152,13 +152,10 @@
                             <option value="rating" <?php if ($sort=="rating") {
                                 echo 'selected="selected"';
                             } ?>
-                                >Highest
-                                rating first</option>
+                                >Highest rating first</option>
                             <option value="price" <?php if ($sort=="price") {
                                 echo 'selected="selected"';
-                            } ?> >Lowest
-                                price
-                                first</option>
+                            } ?> >Lowest price first</option>
                         </select>
                     </div>
                 </div>
@@ -176,7 +173,13 @@
                 $workerlist = dbsearchmultiplecondition("worker", array("uid", "name", "city", "price", "rating"), $targets);
 
                 if (count($workerlist) == 0) {
-                    echo "no workers available.";
+                    ?>
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <a href="/request.php">No workers around here? Let workers choose you when they available.</a>
+                        </div>
+                    </div>
+                    <?php
                 } else {
                     if ($sort == "rating") {
                         $columns = array_column($workerlist, 'rating');
@@ -203,7 +206,8 @@
                             <?php
                     echo "<tbody>";
                     foreach ($workerlist as $worker) {
-                        echo '<tr>';
+                        $link = "/request.php?workerid=" . $worker["uid"] . "&workername=" . $worker["name"];
+                        echo '<tr onClick="window.location.href=\'' . $link . '\';">';
                         echo '<th scope="row">' . $worker["uid"] . '</th>';
                         echo '<td>' . $worker["name"] . '</td>';
                         echo '<td>' . $worker["city"] . '</td>';
@@ -217,14 +221,19 @@
                     </div>
                 </div>
                 <!-- end result -->
-
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <a href="/request.php">Don't have preferred worker? Let worker choose you.</a>
+                    </div>
+                </div>
 
                 <?php
                 }
                 ?>
 
-
+                
             </form>
+            
 
         </div>
     </section><!-- End Contact Section -->

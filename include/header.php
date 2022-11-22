@@ -44,7 +44,7 @@ include 'session.php';
         <?php
         }
         ?>
-        <li><a class="getstarted scrollto" href="request.php">Request a service</a></li>
+        <li><a class="getstarted scrollto" href="searchworker.php">Request a service</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

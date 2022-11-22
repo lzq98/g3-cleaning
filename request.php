@@ -43,7 +43,13 @@
 
             <div class="section-title">
                 <h2>Request service</h2>
-                <p>Please input your personal information, we will assign a worker for you.</p>
+                <?php
+                    if (isset($_GET['workerid']) and isset($_GET['workername'])){
+                        echo "<p>Request service from " . $_GET['workername'] . "</p>";
+                    }else{
+                        echo "<p>Please input your personal information, we will assign a worker for you.</p>";
+                    }
+                ?>
             </div>
 
             <div class="row">
@@ -97,11 +103,10 @@
                             <label for="message">Message</label>
                             <textarea class="form-control" name="message" rows="5"></textarea>
                         </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
+                        <?php 
+                        if (isset($_GET['workerid']) and isset($_GET['workername'])){
+                            echo '<input type="hidden" name="worker" id="worker" value="' . $_GET["workerid"] . '">';
+                        }?>
                         <div class="text-center"><button type="submit">Send Requests</button></div>
                     </form>
                 </div>

@@ -45,7 +45,7 @@
                     <h1>Better cleaning, safer service</h1>
                     <h2>Professionally trained healthy cleaners provides quality cleaning services for your house</h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="request.php" class="btn-get-started scrollto">Get Started</a>
+                        <a href="searchworker.php" class="btn-get-started scrollto">Get Started</a>
                         <!--<a href="#" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>-->
                     </div>
                 </div>

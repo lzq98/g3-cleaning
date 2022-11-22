@@ -10,7 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $values["subject"] = "'" . filter_var($_POST['subject'], FILTER_SANITIZE_STRING) . "'";
     $values["date"] = "'" . filter_var($_POST['date'], FILTER_SANITIZE_STRING) . "'";
     $values["message"] = "'" . filter_var($_POST['message'], FILTER_SANITIZE_STRING) . "'";
-
+    if (isset($_POST["worker"])) {
+        $values["worker"] = "'" . filter_var($_POST['worker'], FILTER_SANITIZE_NUMBER_INT) . "'";
+    }
+    
     if (dbinsert("orders", $values)) {
         echo "Your order has been placed";
     } else {
