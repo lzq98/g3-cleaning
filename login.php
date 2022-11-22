@@ -11,7 +11,7 @@ if (isset($_SESSION["username"])) {
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>SSE G3 cleaning</title>
+    <title>G3 cleaning Login</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
