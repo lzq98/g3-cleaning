@@ -165,8 +165,11 @@ $order = $orderresult[0];
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="start">Price</label>
-                                <input type="text" class="form-control" name="price" id="date" value=<?php echo '"' . $order['price']
-                                    . '"'; if ($_SESSION['role']=='customer' or $order['status']!='notpaid') { echo "readonly"; } ?>>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" name="price" id="date" value=<?php echo '"' . $order['price']
+                                        . '"'; if ($_SESSION['role']=='customer' or $order['status']!='notpaid') { echo "readonly"; } ?>>
+                                </div>
                             </div>
                         </div>
                         
