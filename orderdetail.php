@@ -81,7 +81,27 @@ $order = $orderresult[0];
 
             <div class="section-title">
                 <h2>Order detail</h2>
-                <p>Review or edit your order here</p>
+                <?php
+                if ($order['status'] == 'canceled') {
+                    echo '<p>This order is canceled</p>';
+                }elseif ($order['status'] == 'paid') {
+                    echo '<p>This order is complete</p>';
+                }elseif ($order['status'] == 'notpaid') {
+                    if($order['worker'] == 0 and $order['start'] == '' and $order['end'] == ''){
+                        echo '<p>This order is still looking for worker</p>';
+                    }elseif($order['worker'] != 0 and $order['start'] == '' and $order['end'] == ''){
+                        echo '<p>This order is ready to go</p>';
+                    }elseif($order['worker'] != 0 and $order['start'] != '' and $order['end'] == ''){
+                        echo '<p>This order is ongoing</p>';
+                    }elseif($order['worker'] != 0 and $order['start'] != '' and $order['end'] != ''){
+                        echo '<p>This order is waiting for payment</p>';
+                    }else{
+                        echo '<p>Order wrong, please contact customer support</p>';
+                    }
+                }else{
+                    echo '<p>Order wrong, please contact customer support</p>';
+                }
+                ?>
             </div>
 
             <div class="row">
