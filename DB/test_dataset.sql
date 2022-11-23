@@ -14,6 +14,32 @@ INSERT INTO `customer` (
 INSERT INTO `customer` (
   `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
 ('c5@test.com', 'c5', 'Test customer 5', '0400000005', '63 Victoria Street', 'Melbourne', 'VIC', MD5('customer5'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c6@test.com', 'c6', 'Test customer 6', '0400000006', '62 Queen Street', 'Melbourne', 'VIC', MD5('customer6'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c7@test.com', 'c7', 'Test customer 7', '0400000007', '123 Swonston Street', 'Melbourne', 'VIC', MD5('customer7'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c8@test.com', 'c8', 'Test customer 8', '0400000008', '42 Latrobe Street', 'Melbourne', 'VIC', MD5('customer8'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c9@test.com', 'c9', 'Test customer 9', '0400000009', '232 Abeckt Street', 'Melbourne', 'VIC', MD5('customer9'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c10@test.com', 'c10', 'Test customer 10', '0400000010', '511 Abeckt Street', 'Brisbane', 'QLD', MD5('customer10'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c11@test.com', 'c11', 'Test customer 11', '0400000011', '888 George Street', 'Gold Coast', 'QLD', MD5('customer11'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c12@test.com', 'c12', 'Test customer 12', '0400000012', '999 Frank Street', 'Melbourne', 'VIC', MD5('customer12'));
+INSERT INTO `customer` (
+  `email`, `username`, `name`, `phone`, `address`, `city`, `state`, `password`) VALUES
+('c13@test.com', 'c13', 'Test customer 13', '0400000013', '666 Town Street', 'Melbourne', 'VIC', MD5('customer13'));
+
+
 
 INSERT INTO `worker` (
   `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
@@ -30,3 +56,31 @@ INSERT INTO `worker` (
 INSERT INTO `worker` (
   `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`, `healthy`) VALUES
 ('w5@test.com', 'Test worker 5', '0410000005', 'Sydney', 'NSW', 40, 4.97, MD5('worker5'), false);
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w6@test.com', 'Test worker 6', '0410000006', 'Adelaide', 'SA', 5, 2.13, MD5('worker6'));
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w7@test.com', 'Test worker 7', '0410000007', 'Melbourne', 'VIC', 30, 4.02, MD5('worker7'));
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w8@test.com', 'Test worker 8', '0410000008', 'Adelaide', 'SA', 30, 4.12, MD5('worker8'));
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w9@test.com', 'Test worker 9', '0410000009', 'Melbourne', 'VIC', 33, 3.78, MD5('worker9'));
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`, `healthy`) VALUES
+('w10@test.com', 'Test worker 10', '0410000010', 'Camberra', 'ACT', 31, 3.23, MD5('worker10'), false);
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w11@test.com', 'Test worker 11', '0410000011', 'Gold Coast', 'QLD', 34, 3.87, MD5('worker11'));
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w12@test.com', 'Test worker 12', '0410000012', 'Brisbane', 'QLD', 50, 5.00, MD5('worker12'));
+INSERT INTO `worker` (
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+('w13@test.com', 'Test worker 13', '0410000013', 'Adelaide', 'SA', 22, 2.22, MD5('worker13'));
+
+
+
+
