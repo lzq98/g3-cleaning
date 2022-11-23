@@ -93,22 +93,22 @@
                 foreach ($orders as $order) {
                     if ($order['status'] == "notpaid") {
                         // notpaid
-                        if ($order['worker'] == '' and $order['start'] == '' and $order['end'] == '') {
+                        if ($order['worker'] == 0 and $order['start'] == '' and $order['end'] == '') {
                             // worker not found, not start, not end
                             // this order is waiting for worker
                             $iconleft = "bx bx-time-five icon-help";
                             $status = "Waiting for worker";
-                        } elseif ($order['worker'] != '' and $order['start'] == '' and $order['end'] == '') {
+                        } elseif ($order['worker'] != 0 and $order['start'] == '' and $order['end'] == '') {
                             // worker is found, not start, not end
                             // this order is ready to go
                             $iconleft = "bx bx-time-five icon-help";
                             $status = "Ready";
-                        } elseif ($order['worker'] != '' and $order['start'] != '' and $order['end'] == '') {
+                        } elseif ($order['worker'] != 0 and $order['start'] != '' and $order['end'] == '') {
                             // worker is found, started, not end
                             // this order is ongoing
                             $iconleft = "bx bx-time-five icon-help";
                             $status = "Ongoing";
-                        } elseif ($order['worker'] != '' and $order['start'] != '' and $order['end'] != '') {
+                        } elseif ($order['worker'] != 0 and $order['start'] != '' and $order['end'] != '') {
                             // worker is found, started, ended
                             // this order is end, waiting for payment
                             $iconleft = "bx bx-time-five icon-help";
@@ -120,7 +120,7 @@
                             $status = "Order Error, please contact customer support.";
                         }
                     } elseif ($order['status'] == "paid") {
-                        if ($order['worker'] != '' and $order['start'] != '' and $order['end'] != '') {
+                        if ($order['worker'] != 0 and $order['start'] != '' and $order['end'] != '') {
                             // worker is found, started, ended, customer paid
                             // this order is complete
                             $iconleft = "bx bx-check-circle icon-help";
@@ -156,7 +156,7 @@
                         <div id="history-list-' . $index . '" class="collapse" data-bs-parent=".history-list">';
                     }
                     if ($_SESSION['role'] == 'customer') {
-                        if ($order['worker'] != '') {
+                        if ($order['worker'] != 0) {
                             $workerinfo = dbsearch("worker", ["name", "phone"], "uid", $order['worker'])[0];
                             $workername = $workerinfo['name'];
                             $workerphone = $workerinfo['phone'];

@@ -10,11 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $values["subject"] = "'" . filter_var($_POST['subject'], FILTER_SANITIZE_STRING) . "'";
     $values["date"] = "'" . filter_var($_POST['date'], FILTER_SANITIZE_STRING) . "'";
     $values["message"] = "'" . filter_var($_POST['message'], FILTER_SANITIZE_STRING) . "'";
+    $values["status"] = "'notpaid'";
     if (isset($_POST["worker"])) {
-        $values["worker"] = "'" . filter_var($_POST['worker'], FILTER_SANITIZE_NUMBER_INT) . "'";
-        $values["status"] = "'ready'";
-    }else{
-        $values["status"] = "'waiting'";
+        $values["worker"] = filter_var($_POST['worker'], FILTER_SANITIZE_NUMBER_INT);
     }
     
     if (dbinsert("orders", $values)) {
