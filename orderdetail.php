@@ -129,7 +129,7 @@ $order = $orderresult[0];
                                 <label for="message">Message</label>
                                 <textarea class="form-control" name="message" rows="5" <?php if
                                 ($_SESSION['role'] == 'worker') { echo "readonly"; } ?>><?php
-                                 echo '"' . $order['message'] . '"'; ?></textarea>
+                                 echo $order['message']; ?></textarea>
                             </div>
                         </div>
                         <div class="row">
