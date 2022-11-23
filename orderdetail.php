@@ -165,7 +165,7 @@ $order = $orderresult[0];
                                 if ($order["status"] == 'notpaid' and $order['start'] == '' and $order['end'] == ''){
                                     // order not started
                                     echo '<div class="form-group col-md-4 text-center"><button name="type" value="start" type="submit">Start</button></div>';
-                                }elseif ($order["status"] == 'notpaid' and $order['start'] != '' and $order['end'] != ''){
+                                }elseif ($order["status"] == 'notpaid' and $order['start'] != '' and $order['end'] == ''){
                                     // order started
                                     echo '<div class="form-group col-md-4 text-center"><button name="type" value="end" type="submit">End</button></div>';
                                 }else{
