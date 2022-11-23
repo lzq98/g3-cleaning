@@ -69,25 +69,43 @@ if ($_SESSION["role"] != "worker") {
                     <div class="col-lg-4 form-group">
                         <label for="state">State</label>
                         <select class="form-control" name="state" id="state" onchange="this.form.submit()">
-                            <option value="*" <?php if ($state == "*") { echo 'selected="selected"'; } ?> >All</option>
-                            <option value="NSW" <?php if ($state == "NSW") { echo 'selected="selected"'; } ?> >New South
+                            <option value="*" <?php if ($state=="*") {
+                                echo 'selected="selected"';
+                            } ?> >All</option>
+                            <option value="NSW" <?php if ($state=="NSW") {
+                                echo 'selected="selected"';
+                            } ?> >New South
                                 Wales
                             </option>
-                            <option value="VIC" <?php if ($state == "VIC") { echo 'selected="selected"'; } ?> >Victoria
+                            <option value="VIC" <?php if ($state=="VIC") {
+                                echo 'selected="selected"';
+                            } ?> >Victoria
                             </option>
-                            <option value="SA" <?php if ($state == "SA") { echo 'selected="selected"'; } ?> >South
+                            <option value="SA" <?php if ($state=="SA") {
+                                echo 'selected="selected"';
+                            } ?> >South
                                 Australia
                             </option>
-                            <option value="ACT" <?php if ($state == "ACT") { echo 'selected="selected"'; } ?> >Australia
+                            <option value="ACT" <?php if ($state=="ACT") {
+                                echo 'selected="selected"';
+                            } ?> >Australia
                                 Capital Territory</option>
-                            <option value="WA" <?php if ($state == "WA") { echo 'selected="selected"'; } ?> >Western
+                            <option value="WA" <?php if ($state=="WA") {
+                                echo 'selected="selected"';
+                            } ?> >Western
                                 Australia
                             </option>
-                            <option value="QLD" <?php if ($state == "QLD") { echo 'selected="selected"'; } ?> >Queensland
+                            <option value="QLD" <?php if ($state=="QLD") {
+                                echo 'selected="selected"';
+                            } ?> >Queensland
                             </option>
-                            <option value="TAS" <?php if ($state == "TAS") { echo 'selected="selected"'; } ?> >Tasmania
+                            <option value="TAS" <?php if ($state=="TAS") {
+                                echo 'selected="selected"';
+                            } ?> >Tasmania
                             </option>
-                            <option value="NT" <?php if ($state == "NT") { echo 'selected="selected"'; } ?> >Northern
+                            <option value="NT" <?php if ($state=="NT") {
+                                echo 'selected="selected"';
+                            } ?> >Northern
                                 Territory
                             </option>
                         </select>
@@ -97,32 +115,53 @@ if ($_SESSION["role"] != "worker") {
                         <!--change to auto select later-->
                         <!--do not let customer to choose-->
                         <select class="form-control" name="city" id="city" onchange="this.form.submit()">
-                            <option value="*" <?php if ($city == "*") { echo 'selected="selected"'; } ?> >All</option>
-                            <option value="Sydney" <?php if ($city == "Sydney") { echo 'selected="selected"'; } ?> >Sydney
+                            <option value="*" <?php if ($city=="*") {
+                                echo 'selected="selected"';
+                            } ?> >All</option>
+                            <option value="Sydney" <?php if ($city=="Sydney") {
+                                echo 'selected="selected"';
+                            } ?> >Sydney
                             </option>
-                            <option value="Melbourne" <?php if ($city == "Melbourne") { echo 'selected="selected"'; } ?>
+                            <option value="Melbourne" <?php if ($city=="Melbourne") {
+                                echo 'selected="selected"';
+                            } ?>
                                 >Melbourne</option>
-                            <option value="Adelaide" <?php if ($city == "Adelaide") { echo 'selected="selected"'; } ?>
+                            <option value="Adelaide" <?php if ($city=="Adelaide") {
+                                echo 'selected="selected"';
+                            } ?>
                                 >Adelaide</option>
-                            <option value="Canberra" <?php if ($city == "Canberra") { echo 'selected="selected"'; } ?>
+                            <option value="Canberra" <?php if ($city=="Canberra") {
+                                echo 'selected="selected"';
+                            } ?>
                                 >Canberra</option>
-                            <option value="Perth" <?php if ($city == "Perth") { echo 'selected="selected"'; } ?> >Perth
+                            <option value="Perth" <?php if ($city=="Perth") {
+                                echo 'selected="selected"';
+                            } ?> >Perth
                             </option>
-                            <option value="Brisbane" <?php if ($city == "Brisbane") { echo 'selected="selected"'; } ?>
+                            <option value="Brisbane" <?php if ($city=="Brisbane") {
+                                echo 'selected="selected"';
+                            } ?>
                                 >Brisbane</option>
-                            <option value="Hobart" <?php if ($city == "Hobart") { echo 'selected="selected"'; } ?> >Hobart
+                            <option value="Hobart" <?php if ($city=="Hobart") {
+                                echo 'selected="selected"';
+                            } ?> >Hobart
                             </option>
-                            <option value="Darwin" <?php if ($city == "Darwin") { echo 'selected="selected"'; } ?> >Darwin
+                            <option value="Darwin" <?php if ($city=="Darwin") {
+                                echo 'selected="selected"';
+                            } ?> >Darwin
                             </option>
                         </select>
                     </div>
                     <div class="col-lg-4 form-group">
                         <label for="sort">Sort by</label>
                         <select class="form-control" name="sort" id="sort" onchange="this.form.submit()">
-                            <option value="rating" <?php if ($sort == "rating") { echo 'selected="selected"'; } ?>
-                                >Highest rating first</option>
-                            <option value="price" <?php if ($sort == "price") { echo 'selected="selected"'; } ?> >Lowest
-                                price first</option>
+                            <option value="recent" <?php if ($sort=="recent") {
+                                echo 'selected="selected"';
+                            } ?>
+                                >Most recent date</option>
+                            <option value="oid" <?php if ($sort=="oid") {
+                                echo 'selected="selected"';
+                            } ?> >Latest orders</option>
                         </select>
                     </div>
                 </div>
@@ -136,28 +175,28 @@ if ($_SESSION["role"] != "worker") {
                 if ($state != "*") {
                     $targets["state"] = $state;
                 }
+                
                 $targets["worker"] = "0";
                 $targets["status"] = "notpaid";
-                $orderlist = dbsearchmultiplecondition("orders", array("customer", "address", "city", "date", ), $targets);
-                print_r($orderlist);
+                $orderlist = dbsearchmultiplecondition("orders", array("oid", "customer", "address", "city", "subject", "date"), $targets);
 
-                if (count($workerlist) == 0) {
+                if (count($orderlist) == 0) {
                 ?>
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <a href="/request.php">No workers around here? Let workers choose you when they available.</a>
+                        <a href="/orderhistory.php">No available orders here. Review my orders.</a>
                     </div>
                 </div>
                 <?php
                 } else {
-                    if ($sort == "rating") {
-                        $columns = array_column($workerlist, 'rating');
-                        array_multisort($columns, SORT_DESC, $workerlist);
-                    } elseif ($sort == "price") {
-                        $columns = array_column($workerlist, 'price');
-                        array_multisort($columns, SORT_ASC, $workerlist);
+                    if ($sort == "recent") {
+                        $columns = array_column($orderlist, 'date');
+                        array_multisort($columns, SORT_ASC, $orderlist);
+                    }elseif ($sort == "oid") {
+                        $columns = array_column($orderlist, 'oid');
+                        array_multisort($columns, SORT_DESC, $orderlist);
                     }
-                    ?>
+                ?>
 
                 <!-- start result -->
                 <div class="row">
@@ -165,23 +204,23 @@ if ($_SESSION["role"] != "worker") {
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">Worker ID</th>
-                                    <th scope="col">Name</th>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Customer ID</th>
                                     <th scope="col">Location</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Rating</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Date</th>
                                 </tr>
                             </thead>
                             <?php
                     echo "<tbody>";
-                    foreach ($workerlist as $worker) {
-                        $link = "/request.php?workerid=" . $worker["uid"] . "&workername=" . $worker["name"];
+                    foreach ($orderlist as $order) {
+                        $link = "/claim.php?orderid=" . $order["oid"];
                         echo '<tr onClick="window.location.href=\'' . $link . '\';">';
-                        echo '<th scope="row">' . $worker["uid"] . '</th>';
-                        echo '<td>' . $worker["name"] . '</td>';
-                        echo '<td>' . $worker["city"] . '</td>';
-                        echo '<td>' . $worker["price"] . '</td>';
-                        echo '<td>' . $worker["rating"] . '</td>';
+                        echo '<th scope="row">' . $order["oid"] . '</th>';
+                        echo '<td>' . $order["customer"] . '</td>';
+                        echo '<td>' . $order["city"] . '</td>';
+                        echo '<td>' . $order["subject"] . '</td>';
+                        echo '<td>' . $order["date"] . '</td>';
                         echo '</tr>';
                     }
                     echo "</tbody>";
@@ -192,18 +231,13 @@ if ($_SESSION["role"] != "worker") {
                 <!-- end result -->
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <a href="/request.php">Don't have preferred worker? Let worker choose you.</a>
+                        <a href="/orderhistory.php">Don't have preferred order? Review my orders.</a>
                     </div>
                 </div>
-
                 <?php
                 }
                 ?>
-
-
             </form>
-
-
         </div>
     </section><!-- End Contact Section -->
 
