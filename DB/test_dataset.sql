@@ -69,7 +69,7 @@ INSERT INTO `worker` (
   `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
 ('w9@test.com', 'Test worker 9', '0410000009', 'Melbourne', 'VIC', 33, 3.78, MD5('worker9'));
 INSERT INTO `worker` (
-  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
+  `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`, `healthy`) VALUES
 ('w10@test.com', 'Test worker 10', '0410000010', 'Camberra', 'ACT', 31, 3.23, MD5('worker10'), false);
 INSERT INTO `worker` (
   `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
