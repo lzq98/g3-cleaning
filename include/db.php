@@ -8,7 +8,9 @@ if ($conn->connect_error) {
 function sqlsanitizer($str)
 {
     // sql injection filter here
-    return $str;
+    $str = str_replace('-', '', $str);   // Replaces all hyphens.
+    $str = preg_replace('/[^A-Za-z0-9 ]/', '', $str);  // Remove special characters except space.
+    return $str
 }
 
 function dbsearch($table, $values, $key, $target)
