@@ -149,6 +149,61 @@ $order = $orderresult[0];
                                     . '"'; if ($_SESSION['role']=='customer') { echo "readonly"; } ?>>
                             </div>
                         </div>
+                        
+                        <div class="row">
+                        <?php
+                        // comment and rating
+                        if ($order['status'] == 'paid'){
+                            if ($_SESSION['role'] == 'customer'){
+                                ?>
+                                <div class="form-group col-md-4">
+                                    <label for="rating">Rating</label>
+                                    <input type="range" class="form-range" min="1" max="5" id="rating" name="rating"
+                                    <?php
+                                        if ($order['rating'] == ''){
+                                            echo 'value=5';
+                                        }else{
+                                            echo 'value=' . $order['rating'];
+                                        }
+                                    ?>
+                                    >
+                                </div>
+                                <?php
+                            }else{
+                                ?>
+                                <div class="form-group col-md-4">
+                                    <label for="rating">Rating</label>
+                                    <div>
+                                    <?php
+                                    if ($order['rating'] == ''){
+                                        echo '<p>The customer has not rate yet.</p>';
+                                    }else{
+                                        $i = 0;
+                                        while ($i < $order['rating']){
+                                            echo '<i class="bi bi-star-fill"></i>';
+                                            $i ++;
+                                        }
+                                        while ($i < 5){
+                                            echo '<i class="bi bi-star"></i>';
+                                            $i ++;
+                                        }
+                                    }
+                                    ?>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            ?>
+                                <div class="form-group col-md-8">
+                                    <label for="comment">Comment</label>
+                                    <textarea class="form-control" name="comment" rows="5" <?php if
+                                    ($_SESSION['role'] == 'worker') { echo "readonly"; } ?>><?php
+                                    echo $order['comment']; ?></textarea>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <?php echo '<input type="hidden" name="oid" value="' . $order['oid'] . '">'?>
                         <div class="row">
                             <?php

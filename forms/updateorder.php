@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_POST['type'] == 'pay') {
             if ($order['status'] != 'paid') {
                 // using paypal for payment
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Scripts from paypal
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </html>
 <?php
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Scripts from paypal
                 $values["status"] = '"paid"';
                 if (dbupdate("orders", "oid", $oid, $values)) {
                     echo "You have paid for your order";
@@ -83,6 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $values["date"] = "'" . filter_var($_POST['date'], FILTER_SANITIZE_STRING) . "'";
             $values["subject"] = "'" . htmlentities(filter_var($_POST['subject'], FILTER_SANITIZE_STRING)) . "'";
             $values["message"] = "'" . htmlentities(filter_var($_POST['message'], FILTER_SANITIZE_STRING)) . "'";
+            if($order["status"] = "paid"){
+                // only accept comment and rating change after paid
+                $values["comment"] = "'" . htmlentities(filter_var($_POST['comment'], FILTER_SANITIZE_STRING)) . "'";
+                $values["rating"] = filter_var($_POST['rating'], FILTER_SANITIZE_NUMBER_INT);
+            }
             if (dbupdate("orders", "oid", $oid, $values)) {
                 echo "You have updated your order";
             } else {
