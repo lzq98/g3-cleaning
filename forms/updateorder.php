@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../include/db.php';
+date_default_timezone_set('Australia/Adelaide');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // get order detail
     $oid = filter_var($_POST['oid'], FILTER_SANITIZE_NUMBER_INT);
