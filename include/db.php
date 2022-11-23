@@ -149,4 +149,26 @@ function dbinsert($table, $values)
         return FALSE;
     }
 }
+
+function dbupdate($table, $targetkey, $targetvalue, $values)
+// $values must be associative array
+{
+    global $conn;
+    $query = "UPDATE " . sqlsanitizer($table) . " SET ";
+    $index = 0;
+    foreach ($values as $key => $value) {
+        $query.= sqlsanitizer($key) . "=" . sqlsanitizer($value);
+        if ($index < count($values) - 1) {
+            $query .= ", ";
+            $index += 1;
+        }
+    }
+    $query .= " WHERE " . sqlsanitizer($targetkey) . "=" . sqlsanitizer($targetvalue) . ";";
+    echo $query;
+    if ($conn->query($query) === TRUE) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 ?>
