@@ -201,7 +201,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Edit or review</strong>
-                                    <a href="orderdetail.php?order=' . $order['oid'] .
+                                    <a href="orderdetail.php?orderid=' . $order['oid'] .
                             '" class="btn btn-primary">Select this order</a>
                                     </br>
                                 </div>
@@ -247,7 +247,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Edit or review</strong>
-                                    <a href="orderdetail.php?order=' . $order['oid'] .
+                                    <a href="orderdetail.php?orderid=' . $order['oid'] .
                             '" class="btn btn-primary">Select this order</a>
                                     </br>
                                 </div>
