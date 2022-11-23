@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -45,7 +46,23 @@
                     <h1>Better cleaning, safer service</h1>
                     <h2>Professionally trained healthy cleaners provides quality cleaning services for your house</h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="searchworker.php" class="btn-get-started scrollto">Get Started</a>
+
+                        <?php
+                        if (isset($_SESSION['role'])) {
+                            if ($_SESSION['role'] == 'customer') {
+                                echo '<a href="searchworker.php" class="btn-get-started scrollto">Get Started</a>';
+                            } elseif ($_SESSION['role'] == 'worker') {
+                                echo '<a href="searchorder.php" class="btn-get-started scrollto">Get Started</a>';
+                            } else {
+                                // error handling
+                                // someting wrong with this session
+                                echo '<a href="logout.php" class="btn-get-started scrollto">Get Started</a>';
+                            }
+                        } else {
+                            // not logged in
+                            echo '<a href="login.php" class="btn-get-started scrollto">Get Started</a>';
+                        }
+                        ?>
                         <!--<a href="#" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>-->
                     </div>
                 </div>
@@ -75,19 +92,23 @@
                             We aim:
                         </p>
                         <ul>
-                            <li><i class="ri-check-double-line"></i> To offer Adelaide house cleaning customers a premium service.</li>
-                            <li><i class="ri-check-double-line"></i> To provide a genuine business opportunity for committed franchisees.</li>
-                            <li><i class="ri-check-double-line"></i> To protect public health under COVID-19 situation.</li>
+                            <li><i class="ri-check-double-line"></i> To offer Adelaide house cleaning customers a
+                                premium service.</li>
+                            <li><i class="ri-check-double-line"></i> To provide a genuine business opportunity for
+                                committed franchisees.</li>
+                            <li><i class="ri-check-double-line"></i> To protect public health under COVID-19 situation.
+                            </li>
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                        A professionally-trained,self-employed house cleaner will strive for excellence every time.
+                            A professionally-trained,self-employed house cleaner will strive for excellence every time.
                         </p>
                         <p>
-                        Our vision is to continually offer the best quality home cleaning available in Adelaide, SA. 
-                        By supporting our franchisees to become the best home cleaners they can be, we are able to pursue 
-                        a higher standard of customer service and provide value to our customers every time.
+                            Our vision is to continually offer the best quality home cleaning available in Adelaide, SA.
+                            By supporting our franchisees to become the best home cleaners they can be, we are able to
+                            pursue
+                            a higher standard of customer service and provide value to our customers every time.
                         </p>
                         <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
                     </div>
@@ -108,7 +129,7 @@
                         <div class="content">
                             <h3>We provide our customers with <strong>the safest cleaning service.</strong></h3>
                             <p>
-                                COVID-19 is now a global pandemic affecting over 200 countries 
+                                COVID-19 is now a global pandemic affecting over 200 countries
                                 after its first recorded outbreak in December 2019.
                                 Choosing G3-Cleaning is the safest and easiest way to keep your home clean.
                             </p>
@@ -117,14 +138,15 @@
                         <div class="accordion-list">
                             <ul>
                                 <li>
-                                    <a data-bs-toggle="collapse" class="collapse"
-                                        data-bs-target="#accordion-list-1">Can I book a service
+                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">Can
+                                        I book a service
                                         for a certain day? <i class="bx bx-chevron-down icon-show"></i><i
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                                         <p>
-                                            Of course you can!  G3-Cleaning aims to provide our customers with
-                                            premium quality services and best price.  With an eligible account and you are good to go!
+                                            Of course you can! G3-Cleaning aims to provide our customers with
+                                            premium quality services and best price. With an eligible account and you
+                                            are good to go!
                                         </p>
                                     </div>
                                 </li>
@@ -136,9 +158,11 @@
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                                         <p>
-                                            All our providers are required to be licensed and, more importantly, COVID negative! 
-                                            You can always ask for proof of vaccination or COVID test result from your service provider!
-                                            
+                                            All our providers are required to be licensed and, more importantly, COVID
+                                            negative!
+                                            You can always ask for proof of vaccination or COVID test result from your
+                                            service provider!
+
                                         </p>
                                     </div>
                                 </li>
@@ -150,7 +174,7 @@
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                                         <p>
-                                            G3-Cleaning provides our customers with cleaning services 
+                                            G3-Cleaning provides our customers with cleaning services
                                             including once-off cleaning, regular cleaning, spring cleaning and more!
                                             Register and book your next service with us now!
                                         </p>
@@ -163,7 +187,8 @@
                     </div>
 
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                        style='background-image: url("assets/img/Clean/home3.png");' data-aos="zoom-in" data-aos-delay="150">
+                        style='background-image: url("assets/img/Clean/home3.png");' data-aos="zoom-in"
+                        data-aos-delay="150">
                         &nbsp;</div>
                 </div>
 
@@ -181,7 +206,7 @@
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
                         <h3>Our customers are satisfied!</h3>
                         <p class="fst-italic">
-                            We have a large customer base in Adelaide and 
+                            We have a large customer base in Adelaide and
                             feedbacks are overwhelmingly good!
                         </p>
 
@@ -239,7 +264,8 @@
                 <div class="row">
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box">
-                            <div class="icon"><img src= "assets/img/clean/Regular-Cleaning.png" height="200" width="200"></div>
+                            <div class="icon"><img src="assets/img/clean/Regular-Cleaning.png" height="200" width="200">
+                            </div>
                             <h4><a href="">Regular Cleaning</a></h4>
                             <p>Book now and say goodbye to your weekly cleaning chores.</p>
                         </div>
@@ -248,7 +274,8 @@
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                         data-aos-delay="200">
                         <div class="icon-box">
-                            <div class="icon"><img src= "assets/img/clean/Window-Cleaning.png" height="200" width="200"></div>
+                            <div class="icon"><img src="assets/img/clean/Window-Cleaning.png" height="200" width="200">
+                            </div>
                             <h4><a href="">Window Cleaning</a></h4>
                             <p>Let the sunshine in through your windows.</p>
                         </div>
@@ -257,7 +284,8 @@
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="300">
                         <div class="icon-box">
-                            <div class="icon"><img src= "assets/img/clean/Carpet-Cleaning.png" height="200" width="200"></div>
+                            <div class="icon"><img src="assets/img/clean/Carpet-Cleaning.png" height="200" width="200">
+                            </div>
                             <h4><a href="">Carpet Cleaning</a></h4>
                             <p>Our service will leave your carpets softer and cleaner.</p>
                         </div>
@@ -266,7 +294,8 @@
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                         data-aos-delay="400">
                         <div class="icon-box">
-                            <div class="icon"><img src= "assets/img/clean/End-of-Lease.png" height="200" width="200"></div>
+                            <div class="icon"><img src="assets/img/clean/End-of-Lease.png" height="200" width="200">
+                            </div>
                             <h4><a href="">End of Lease</a></h4>
                             <p>With our end-of-lease cleaning, moving out has never been easier.</p>
                         </div>
@@ -285,7 +314,7 @@
                     <div class="col-lg-9 text-center text-lg-start">
                         <h3>Book To Action</h3>
                         <p> All of our cleaners are insured, police checked, and have certified training.
-                        We can restore your property to its original condition, ensuring your complete satisfaction.
+                            We can restore your property to its original condition, ensuring your complete satisfaction.
                         </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
@@ -298,12 +327,12 @@
 
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
-            <div class="container" >
+            <div class="container">
 
                 <div class="section-title">
                     <h2>Testimonials</h2>
-                    <p>G3-Cleaning aims to provide the absolute best job possible, on time, every time. 
-                        We are committed to achieving customer satisfaction through the promotion of 
+                    <p>G3-Cleaning aims to provide the absolute best job possible, on time, every time.
+                        We are committed to achieving customer satisfaction through the promotion of
                         excellence in all our business processes and activities. </p>
                 </div>
 
@@ -311,21 +340,21 @@
                 <div class="row portfolio-container" data-aos-delay="200">
 
                     <div class="col-lg-4 col-md-6 portfolio-item ">
-                        <div class="portfolio-img"><img src="assets/img/clean/review1.png" class="img-fluid"
-                                alt=""></div>
-                        
+                        <div class="portfolio-img"><img src="assets/img/clean/review1.png" class="img-fluid" alt="">
+                        </div>
+
                     </div>
 
                     <div class="col-lg-4 col-md-6 portfolio-item ">
-                        <div class="portfolio-img"><img src="assets/img/clean/review2.png" class="img-fluid"
-                                alt=""></div>
-                        
+                        <div class="portfolio-img"><img src="assets/img/clean/review2.png" class="img-fluid" alt="">
+                        </div>
+
                     </div>
 
                     <div class="col-lg-4 col-md-6 portfolio-item ">
-                        <div class="portfolio-img"><img src="assets/img/clean/review3.png" class="img-fluid"
-                                alt=""></div>
-                        
+                        <div class="portfolio-img"><img src="assets/img/clean/review3.png" class="img-fluid" alt="">
+                        </div>
+
                     </div>
 
                 </div>

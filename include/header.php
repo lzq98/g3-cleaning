@@ -43,8 +43,22 @@ include 'session.php';
         <li><a class="nav-link scrollto" href="login.php">Login</a></li>
         <?php
         }
+
+        if (isset($_SESSION['role'])) {
+          if ($_SESSION['role'] == 'customer') {
+            echo '<li><a class="getstarted scrollto" href="searchworker.php">Request a service</a></li>';
+          } elseif ($_SESSION['role'] == 'worker') {
+            echo '<li><a class="getstarted scrollto" href="searchorder.php">Claim an order</a></li>';
+          } else {
+            // error handling
+            echo '<li><a class="getstarted scrollto" href="index.php">Get started</a></li>';
+          }
+        } else {
+          // not logged in
+          echo '<li><a class="getstarted scrollto" href="index.php">Get started</a></li>';
+        }
         ?>
-        <li><a class="getstarted scrollto" href="searchworker.php">Request a service</a></li>
+
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
