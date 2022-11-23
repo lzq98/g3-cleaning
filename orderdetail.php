@@ -95,12 +95,12 @@ $order = $orderresult[0];
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="state">State</label>
-                                <input class="form-control" id="state" value=<?php echo '"' . $order['state'] . '"'; ?>
+                                <input type="text" class="form-control" id="state" value=<?php echo '"' . $order['state'] . '"'; ?>
                                 required readonly>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="city">City</label>
-                                <input class="form-control" id="city" value=<?php echo '"' . $order['city'] . '"'; ?>
+                                <input type="text" class="form-control" id="city" value=<?php echo '"' . $order['city'] . '"'; ?>
                                 required readonly>
                             </div>
                         </div>
@@ -145,10 +145,11 @@ $order = $orderresult[0];
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="start">Price</label>
-                                <input type="text" class="form-control" id="date" value=<?php echo '"' . $order['price']
+                                <input type="text" class="form-control" name="price" id="date" value=<?php echo '"' . $order['price']
                                     . '"'; if ($_SESSION['role']=='customer') { echo "readonly"; } ?>>
                             </div>
                         </div>
+                        <?php echo '<input type="hidden" name="oid" value="' . $order['oid'] . '">'?>
                         <div class="row">
                             <div class="form-group col-md-4 text-center"></div>
                             <?php
