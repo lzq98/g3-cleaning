@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "This email has been registed, please login.";
     } else {
         // collect value of input field
-        $values["username"] = "'" . filter_var($_POST['username'], FILTER_SANITIZE_STRING) . "'";
-        $values["email"] = "'" . filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) . "'";
-        $values["name"] = "'" . filter_var($_POST['name'], FILTER_SANITIZE_STRING) . "'";
-        $values["phone"] = "'" . filter_var($_POST['phone'], FILTER_SANITIZE_STRING) . "'";
-        $values["address"] = "'" . filter_var($_POST['address'], FILTER_SANITIZE_STRING) . "'";
-        $values["city"] = "'" . filter_var($_POST['city'], FILTER_SANITIZE_STRING) . "'";
-        $values["state"] = "'" . filter_var($_POST['state'], FILTER_SANITIZE_STRING) . "'";
-        $values["password"] = "'" . filter_var($_POST['password'], FILTER_SANITIZE_STRING) . "'";
+        $values["username"] = "'" . htmlentities(filter_var($_POST['username'], FILTER_SANITIZE_STRING)) . "'";
+        $values["email"] = "'" . htmlentities(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)) . "'";
+        $values["name"] = "'" . htmlentities(filter_var($_POST['name'], FILTER_SANITIZE_STRING)) . "'";
+        $values["phone"] = "'" . filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT) . "'";
+        $values["address"] = "'" . htmlentities(filter_var($_POST['address'], FILTER_SANITIZE_STRING)) . "'";
+        $values["city"] = "'" . htmlentities(filter_var($_POST['city'], FILTER_SANITIZE_STRING)) . "'";
+        $values["state"] = "'" . htmlentities(filter_var($_POST['state'], FILTER_SANITIZE_STRING)) . "'";
+        $values["password"] = "'" . filter_var($_POST['password'], FILTER_SANITIZE_STRING) . "'"; // will hashing the password later, htmlentities() is uncessary
         if (dbinsert("customer", $values)) {
             echo "Your account has been registered successfully";
         } else {

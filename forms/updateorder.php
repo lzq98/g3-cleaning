@@ -27,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } elseif ($_POST['type'] == 'update') {
             // only accept date, subject and message update
             $values["date"] = "'" . filter_var($_POST['date'], FILTER_SANITIZE_STRING) . "'";
-            $values["subject"] = "'" . filter_var($_POST['subject'], FILTER_SANITIZE_STRING) . "'";
-            $values["message"] = "'" . filter_var($_POST['message'], FILTER_SANITIZE_STRING) . "'";
+            $values["subject"] = "'" . htmlentities(filter_var($_POST['subject'], FILTER_SANITIZE_STRING)) . "'";
+            $values["message"] = "'" . htmlentities(filter_var($_POST['message'], FILTER_SANITIZE_STRING)) . "'";
             if (dbupdate("orders", "oid", $oid, $values)) {
                 echo "You have updated your order";
             } else {
