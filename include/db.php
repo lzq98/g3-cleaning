@@ -57,7 +57,7 @@ function dbsearchmultiple($table, $values, $key, $targets)
         }
     }
     $query .= ");";
-    echo $query;
+    //echo $query;
     $dbresult = mysqli_query($conn, $query);
 
     $result = [];
@@ -164,7 +164,7 @@ function dbupdate($table, $targetkey, $targetvalue, $values)
         }
     }
     $query .= " WHERE " . sqlsanitizer($targetkey) . "=" . sqlsanitizer($targetvalue) . ";";
-    echo $query;
+    //echo $query;
     if ($conn->query($query) === TRUE) {
         return TRUE;
     } else {
