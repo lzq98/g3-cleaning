@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["city"] = $workerinfo[0]["city"];
       $_SESSION["state"] = $workerinfo[0]["state"];
       $_SESSION["phone"] = $workerinfo[0]["phone"];
+      $_SESSION["price"] = $workerinfo[0]["price"];
       $_SESSION["role"] = "worker";
       header("Location:/index.php");
     } else {

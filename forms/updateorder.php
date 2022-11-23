@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } elseif ($_POST['type'] == 'start') {
             // start work
             // not accept any values except oid
-            if ($order['status'] == 'notpaid' and $order['start'] == "" and $order['end'] == ""){
+            if ($order['status'] == 'notpaid' and $order['start'] == "" and $order['end'] == "") {
                 // update start time
                 $values["start"] = date('"h:i:s"');
                 if (dbupdate("orders", "oid", $oid, $values)) {
@@ -76,11 +76,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } elseif ($_POST['type'] == 'end') {
             // end work
             // not accept any values except oid
-            if ($order['status'] == 'notpaid' and $order['start'] != "" and $order['end'] == ""){
-                $values["end"] = date('"h:i:s"');
+            if ($order['status'] == 'notpaid' and $order['start'] != "" and $order['end'] == "") {
+                $end = date('h:i:s');
+                $values["end"] = '"' . $end . '"';
 
                 //add automatic calculate price if not set here
                 //$values["price"] = autocalc();
+                if ($order['price'] == "") {
+                    $values["price"] = floor(((strtotime($end) - strtotime($order["start"])) % 86400 / 3600) * $_SESSION['price']);
+                }
 
                 if (dbupdate("orders", "oid", $oid, $values)) {
                     echo "You have end your order";
