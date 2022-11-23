@@ -231,24 +231,26 @@ $order = $orderresult[0];
                                 if ($order["status"] == 'notpaid' and $order['start'] != '' and $order['end'] != '' and $order['price'] != ''){
                                     // order ends, the order is ready for payment
                                     echo '<div class="form-group col-md-4 text-center"><button name="type" value="pay" type="submit">Pay</button></div>';
+                                    echo '<div class="form-group col-md-4 text-center"></div>';
                                 }else{
                                     // the order is not ready for payment, dont show the button
-                                    echo '<div class="form-group col-md-4 text-center"></div>';
+                                    echo '<div class="form-group col-md-8 text-center"></div>';
                                 }
                             }elseif($_SESSION["role"]=='worker'){
                                 if ($order["status"] == 'notpaid' and $order['start'] == '' and $order['end'] == ''){
                                     // order not started
                                     echo '<div class="form-group col-md-4 text-center"><button name="type" value="start" type="submit">Start</button></div>';
+                                    echo '<div class="form-group col-md-4 text-center"></div>';
                                 }elseif ($order["status"] == 'notpaid' and $order['start'] != '' and $order['end'] == ''){
                                     // order started
+                                    echo '<div class="form-group col-md-4 text-center"></div>';
                                     echo '<div class="form-group col-md-4 text-center"><button name="type" value="end" type="submit">End</button></div>';
                                 }else{
                                     // other situation, don't show the button
-                                    echo '<div class="form-group col-md-4 text-center"></div>';
+                                    echo '<div class="form-group col-md-8 text-center"></div>';
                                 }
                             }
                             ?>
-                            <div class="form-group col-md-4 text-center"></div>
                             <div class="form-group col-md-4 text-center"><button name="type" value="update" type="submit">Update</button></div>
                         </div>
                     </form>
