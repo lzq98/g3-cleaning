@@ -151,7 +151,6 @@ $order = $orderresult[0];
                         </div>
                         <?php echo '<input type="hidden" name="oid" value="' . $order['oid'] . '">'?>
                         <div class="row">
-                            <div class="form-group col-md-4 text-center"></div>
                             <?php
                             if($_SESSION["role"]=='customer'){
                                 if ($order["status"] == 'notpaid' and $order['start'] != '' and $order['end'] != '' and $order['price'] != ''){
@@ -174,6 +173,7 @@ $order = $orderresult[0];
                                 }
                             }
                             ?>
+                            <div class="form-group col-md-4 text-center"></div>
                             <div class="form-group col-md-4 text-center"><button name="type" value="update" type="submit">Update</button></div>
                         </div>
                     </form>
