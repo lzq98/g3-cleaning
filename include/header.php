@@ -49,7 +49,9 @@ include 'session.php';
             echo '<li><a class="getstarted scrollto" href="searchworker.php">Request a service</a></li>';
           } elseif ($_SESSION['role'] == 'worker') {
             echo '<li><a class="getstarted scrollto" href="searchorder.php">Claim an order</a></li>';
-          } else {
+          } elseif ($_SESSION['role'] == 'admin') {
+            echo '<li><a class="getstarted scrollto" href="verifylist.php">Verify pending certificates</a></li>';
+          }else {
             // error handling
             echo '<li><a class="getstarted scrollto" href="index.php">Get started</a></li>';
           }
