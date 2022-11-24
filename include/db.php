@@ -8,6 +8,8 @@ if ($conn->connect_error) {
 function sqlsanitizer($str)
 {
     // sql injection filter here
+    $str = str_replace('-', '', $str);  // replace all hyphens 
+
     return $str;
 }
 
