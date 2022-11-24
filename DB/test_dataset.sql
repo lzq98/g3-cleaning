@@ -128,3 +128,12 @@ INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`,
 ('1', NULL, '1128 Doyers street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
 ('1', NULL, '1129 Bank street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+
+
+
+INSERT INTO `admin` (
+  `email`, `username`, `name`, `phone`, `password`) VALUES 
+('a1@test.com', 'a1', 'admin 1', '0420000001', MD5('admin1'));
+INSERT INTO `admin` (
+  `email`, `username`, `name`, `phone`, `password`) VALUES 
+('a2@test.com', 'a2', 'admin 2', '0420000002', MD5('admin2'));

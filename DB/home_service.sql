@@ -46,3 +46,23 @@ CREATE TABLE IF NOT EXISTS `worker` (
   `healthy` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (uid)
 );
+
+CREATE TABLE IF NOT EXISTS `image` (
+  `imageid` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `worker` int UNSIGNED NOT NULL,
+  `image` varchar(32) NOT NULL,
+  `date` date NOT NULL,
+  `result` tinyint(1),
+  `reviewer` int UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (imageid)
+);
+
+CREATE TABLE IF NOT EXISTS `admin`(
+  `uid` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  PRIMARY KEY (uid)
+);

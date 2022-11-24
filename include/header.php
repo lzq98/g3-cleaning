@@ -55,7 +55,7 @@ include 'session.php';
           }
         } else {
           // not logged in
-          echo '<li><a class="getstarted scrollto" href="index.php">Get started</a></li>';
+          echo '<li><a class="getstarted scrollto" href="login.php">Get started</a></li>';
         }
         ?>
 
