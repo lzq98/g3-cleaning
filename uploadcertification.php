@@ -2,11 +2,11 @@
 <html lang="en">
 <?php
 session_start();
-if (!isset($_SESSION["uid"])){
+if (!isset($_SESSION["uid"])) {
     header("Location:/login.php");
     exit;
 }
-if ($_SESSION['role'] != 'worker' or $_SESSION['healthy'] != 0){
+if ($_SESSION['role'] != 'worker' or $_SESSION['healthy'] != 0) {
     // this webpage is for workers got COVID or banned
     header("Location:/index.php");
     exit;
@@ -59,10 +59,18 @@ if ($_SESSION['role'] != 'worker' or $_SESSION['healthy'] != 0){
 
             <div class="row">
                 <div class="col-lg-12 d-flex align-items-center">
-                    <form action="forms/uploadcert.php" method="post" role="form" class="php-request-form" enctype="multipart/form-data">
+                    <form action="forms/uploadcert.php" method="post" role="form" class="php-request-form"
+                        enctype="multipart/form-data">
                         <div class="row">
-                            <input name="image" type="file">
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4 d-flex align-items-center">
+                                <input name="image" class="form-control" type="file">
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
                         </div>
+                        </br>
                         <div class="text-center"><button type="submit">Submit</button></div>
                     </form>
                 </div>
