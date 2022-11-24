@@ -63,7 +63,7 @@ if (!isset($_GET['imageid'])) {
             </div>
 
 
-            <form action="include/verify.php" method="get" role="form" class="php-request-form">
+            <form action="forms/verify.php" method="post" role="form" class="php-request-form">
                 <?php
 
                 include 'include/db.php';
@@ -107,10 +107,10 @@ if (!isset($_GET['imageid'])) {
                 <input type="hidden" name="imageid" value="<?php echo $image['imageid']; ?>">
                 <div class="row">
                     <div class="form-group col-md-6 text-center">
-                        <button name="type" value="reject" type="submit">Reject</button>
+                        <button name="result" value=0 type="submit">Reject</button>
                     </div>
                     <div class="form-group col-md-6 text-center">
-                        <button name="type" value="accept" type="submit">Accept</button>
+                        <button name="result" value=1 type="submit">Accept</button>
                     </div>
                 </div>
                 <?php
