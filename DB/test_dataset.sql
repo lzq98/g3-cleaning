@@ -81,6 +81,56 @@ INSERT INTO `worker` (
   `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
 ('w13@test.com', 'Test worker 13', '0410000013', 'Adelaide', 'SA', 22, 2.22, MD5('worker13'));
 
+
+
+
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('2', '4', '110 ABC street', 'Adelaide', 'SA', '0001-12-22', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('2', '4', '111 AAA street', 'Adelaide', 'SA', '2022-12-02', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('3', '1', '112 BBB street', 'Brisbane', 'QLD', '2022-12-12', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('3', '5', '113 CCC street', 'Brisbane', 'QLD', '2022-12-23', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('4', '2', '114 King street', 'Brisbane', 'QLD', '2022-12-04', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('4', '8', '115 Queen street', 'Melbourne', 'VIC', '2022-12-08', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('5', '3', '116 Williams street', 'Melbourne', 'VIC', '2022-12-01', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('5', '7', '117 Town street', 'Camberra', 'ACT', '2022-12-09', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'paid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '2', '118 Frank street', 'Camberra', 'ACT', '2022-12-09', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'paid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '3', '119 Linkon street', 'Adelaide', 'SA', '2022-12-11', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'paid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '4', '1120 York street', 'Adelaide', 'SA', '2022-12-22', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'paid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '4', '1121 New street', 'Adelaide', 'SA', '2022-12-22', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'canceled');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '10', '1122 Ring street', 'Adelaide', 'SA', '2022-11-22', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'canceled');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '7', '1123 Bell street', 'Adelaide', 'SA', '2022-11-02', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'canceled');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '12', '1124 Swonston street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'canceled');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', '12', '1124 Big street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'canceled');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', 0, '1124 Sally street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', 0, '1125 Broadway street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', 0, '1126 Wall street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', 0, '1127 Washington  street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', 0, '1128 Doyers street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
+('1', 0, '1129 Bank street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+
+
+
 INSERT INTO `admin` (
   `email`, `username`, `name`, `phone`, `password`) VALUES 
 ('a1@test.com', 'a1', 'admin 1', '0420000001', MD5('admin1'));
