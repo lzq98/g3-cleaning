@@ -81,6 +81,9 @@ INSERT INTO `worker` (
   `email`, `name`, `phone`, `city`, `state`, `price`, `rating`, `password`) VALUES
 ('w13@test.com', 'Test worker 13', '0410000013', 'Adelaide', 'SA', 22, 2.22, MD5('worker13'));
 
+
+
+
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
 ('2', '4', '110 ABC street', 'Adelaide', 'SA', '0001-12-22', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
@@ -126,10 +129,11 @@ INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`,
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
 ('1', 0, '1129 Bank street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 
+
+
 INSERT INTO `admin` (
   `email`, `username`, `name`, `phone`, `password`) VALUES 
 ('a1@test.com', 'a1', 'admin 1', '0420000001', MD5('admin1'));
 INSERT INTO `admin` (
   `email`, `username`, `name`, `phone`, `password`) VALUES 
 ('a2@test.com', 'a2', 'admin 2', '0420000002', MD5('admin2'));
-
