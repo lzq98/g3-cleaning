@@ -117,17 +117,17 @@ INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`,
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
 ('1', '12', '1124 Big street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'canceled');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
-('1', NULL, '1124 Sally street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+('1', 0, '1124 Sally street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
-('1', NULL, '1125 Broadway street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+('1', 0, '1125 Broadway street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
-('1', NULL, '1126 Wall street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+('1', 0, '1126 Wall street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
-('1', NULL, '1127 Washington  street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+('1', 0, '1127 Washington  street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
-('1', NULL, '1128 Doyers street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+('1', 0, '1128 Doyers street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 INSERT INTO `orders` ( `customer`, `worker`, `address`, `city`, `state`, `date`, `start`, `end`, `subject`, `message`, `comment`, `rating`, `price`, `status`) VALUES 
-('1', NULL, '1129 Bank street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
+('1', 0, '1129 Bank street', 'Adelaide', 'SA', '2022-11-30', NULL, NULL, 'whatever', 'something', NULL, NULL, NULL, 'notpaid');
 
 
 
