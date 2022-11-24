@@ -108,6 +108,26 @@ $order = $orderresult[0];
                 <div class="col-lg-12 d-flex align-items-center">
                     <form action="forms/updateorder.php" method="post" role="form" class="php-request-form">
                         <div class="row">
+                            <div class="form-group col-md-4">
+                                <strong>Order ID</strong>
+                                <p><?php echo $order['oid']; ?></p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <strong>Customer ID</strong>
+                                <p><?php echo $order['customer']; ?></p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <strong>Worker ID</strong>
+                                <p><?php
+                                if ($order['worker'] != 0){
+                                    echo $order['worker']; 
+                                }else{
+                                    echo "N/A";
+                                }
+                                ?></p>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="address">Address</label>
                                 <input type="text" class="form-control" id="address" value=<?php echo '"' .
