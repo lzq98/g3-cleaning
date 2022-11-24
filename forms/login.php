@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["state"] = $workerinfo[0]["state"];
       $_SESSION["phone"] = $workerinfo[0]["phone"];
       $_SESSION["price"] = $workerinfo[0]["price"];
+      $_SESSION["healthy"] = $workerinfo[0]["healthy"];
       $_SESSION["role"] = "worker";
       header("Location:/index.php");
     } else {
