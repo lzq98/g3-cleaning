@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `imageid` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `worker` int UNSIGNED NOT NULL,
   `image` varchar(32) NOT NULL,
+  `type` varchar(10) NOT NULL,
   `date` date NOT NULL,
   `result` tinyint(1),
   `reviewer` int UNSIGNED NOT NULL DEFAULT 0,
