@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $customerinfo = dbsearchall('customer', 'email', $email);
   $workerinfo = dbsearchall('worker', 'email', $email);
+  $admininfo = dbsearchall('admin', 'email', $email);
 
   function loginascustomer($customerinfo)
   {
@@ -49,6 +50,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
+  function loginasadmin($admininfo)
+  {
+    global $password;
+    if ($admininfo[0]["password"] == $password) {
+      $_SESSION["uid"] = $admininfo[0]["uid"];
+      $_SESSION["email"] = $admininfo[0]["email"];
+      $_SESSION["username"] = $admininfo[0]["username"];
+      $_SESSION["name"] = $admininfo[0]["name"];
+      $_SESSION["address"] = "";
+      $_SESSION["city"] = "";
+      $_SESSION["state"] = "";
+      $_SESSION["phone"] = $admininfo[0]["phone"];
+      $_SESSION["role"] = "admin";
+      header("Location:/index.php");
+    } else {
+      echo "wrong password";
+    }
+  }
+
+  //special case: admin account
+  if(count($admininfo) > 0){
+    loginasadmin($admininfo);
+    exit;
+  }
+
   if (count($customerinfo) == 0 and count($workerinfo) == 0) {
     //case 1: no account found in both customer and worker
     echo "Email address not found";
@@ -59,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //case 3: found account in customer db only
     loginascustomer($customerinfo);
   } else {
+    
     //case 4: found account in both customer and worker db
     //let user choose login account(do it later)
     //let user contact customer service
