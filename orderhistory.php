@@ -91,23 +91,58 @@
                 $orders = array_reverse($orders);
                 $index = 1;
                 foreach ($orders as $order) {
-                    if ($order['status'] == "waiting" or $order['status'] == "ready") {
-                        $iconleft = "bx bx-time-five icon-help";
-                    } elseif ($order['status'] == "ongoing") {
-                        $iconleft = "bx bx-loader-circle icon-help";
-                    } elseif ($order['status'] == "notpaid") {
-                        $iconleft = "bx bx-info-circle icon-help";
+                    if ($order['status'] == "notpaid") {
+                        // notpaid
+                        if ($order['worker'] == 0 and $order['start'] == '' and $order['end'] == '') {
+                            // worker not found, not start, not end
+                            // this order is waiting for worker
+                            $iconleft = "bx bx-time-five icon-help";
+                            $status = "Waiting for worker";
+                        } elseif ($order['worker'] != 0 and $order['start'] == '' and $order['end'] == '') {
+                            // worker is found, not start, not end
+                            // this order is ready to go
+                            $iconleft = "bx bx-time-five icon-help";
+                            $status = "Ready";
+                        } elseif ($order['worker'] != 0 and $order['start'] != '' and $order['end'] == '') {
+                            // worker is found, started, not end
+                            // this order is ongoing
+                            $iconleft = "bx bx-time-five icon-help";
+                            $status = "Ongoing";
+                        } elseif ($order['worker'] != 0 and $order['start'] != '' and $order['end'] != '') {
+                            // worker is found, started, ended
+                            // this order is end, waiting for payment
+                            $iconleft = "bx bx-time-five icon-help";
+                            $status = "Waiting for payment";
+                        } else {
+                            // something went wrong
+                            // error handling
+                            $iconleft = "bx bx-help-circle icon-help";
+                            $status = "Order Error, please contact customer support.";
+                        }
                     } elseif ($order['status'] == "paid") {
-                        $iconleft = "bx bx-check-circle icon-help";
+                        if ($order['worker'] != 0 and $order['start'] != '' and $order['end'] != '') {
+                            // worker is found, started, ended, customer paid
+                            // this order is complete
+                            $iconleft = "bx bx-check-circle icon-help";
+                            $status = "Complete";
+                        } else {
+                            // something went wrong
+                            // error handling
+                            $iconleft = "bx bx-help-circle icon-help";
+                            $status = "Order Error, please contact customer support.";
+                        }
                     } elseif ($order['status'] == "canceled") {
+                        //order canceled
                         $iconleft = "bx gmdi-cancel-o icon-help";
+                        $status = "Canceled";
                     } else {
+                        // something went wrong, there should be no other status
+                        // error handling
                         $iconleft = "bx bx-help-circle icon-help";
+                        $status = "Order Error, please contact customer support.";
                     }
+
                     echo '<li data-aos="fade-up" data-aos-delay="' . $index * 100 . '">';
-
-
-
                     $title = "#" . $order['oid'] . ' ' . $order['date'] . ' ' . $order['subject'];
                     if ($index == 1) {
                         echo '<i class="' . $iconleft . '"></i> <a data-bs-toggle="collapse" class="collapse"
@@ -121,7 +156,7 @@
                         <div id="history-list-' . $index . '" class="collapse" data-bs-parent=".history-list">';
                     }
                     if ($_SESSION['role'] == 'customer') {
-                        if ($order['worker'] != '') {
+                        if ($order['worker'] != 0) {
                             $workerinfo = dbsearch("worker", ["name", "phone"], "uid", $order['worker'])[0];
                             $workername = $workerinfo['name'];
                             $workerphone = $workerinfo['phone'];
@@ -149,7 +184,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Status</strong>
-                                    <p>' . $order['status'] . '</p>
+                                    <p>' . $status . '</p>
                                     </br>
                                 </div>
                             </div>
@@ -166,7 +201,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Edit or review</strong>
-                                    <a href="orderdetail.php?order=' . $order['oid'] .
+                                    <a href="orderdetail.php?orderid=' . $order['oid'] .
                             '" class="btn btn-primary">Select this order</a>
                                     </br>
                                 </div>
@@ -195,7 +230,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Status</strong>
-                                    <p>' . $order['status'] . '</p>
+                                    <p>' . $status . '</p>
                                     </br>
                                 </div>
                             </div>
@@ -212,7 +247,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Edit or review</strong>
-                                    <a href="orderdetail.php?order=' . $order['oid'] .
+                                    <a href="orderdetail.php?orderid=' . $order['oid'] .
                             '" class="btn btn-primary">Select this order</a>
                                     </br>
                                 </div>

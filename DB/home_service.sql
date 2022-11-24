@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `customer`(
 CREATE TABLE IF NOT EXISTS `orders`(
   `oid` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `customer` int UNSIGNED NOT NULL,
-  `worker` int UNSIGNED,
+  `worker` int UNSIGNED NOT NULL DEFAULT 0,
   `address` varchar(100) NOT NULL,
   `city` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `orders`(
   `comment` varchar(300),
   `rating` int,
   `price` int,
-  `status` varchar(10) NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'notpaid',
   PRIMARY KEY (oid)
 );
 
