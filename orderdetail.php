@@ -254,7 +254,17 @@ $order = $orderresult[0];
                                 }
                             }
                             ?>
-                            <div class="form-group col-md-4 text-center"><button name="type" value="update" type="submit">Update</button></div>
+                            <?php
+                                if ($_SESSION['role'] == "worker" and $order["status"] == 'paid'){
+                                    // do not show update button
+                                    echo '<div class="form-group col-md-4 text-center"></div>';
+                                }elseif ($order["status"] == 'canceled'){
+                                    // do not show update button
+                                    echo '<div class="form-group col-md-4 text-center"></div>';
+                                }else{
+                                    echo '<div class="form-group col-md-4 text-center"><button name="type" value="update" type="submit">Update</button></div>';
+                                }
+                            ?>
                         </div>
                     </form>
                 </div>
