@@ -10,6 +10,4 @@
 ![example](/assets/img/example.png)
 
 * Save and close, then start Apache
-* Open browser and input "localhost" as the URL, press Enter and you are go to go!
-
-**You could also just go to http://101.173.3.106/ to check for it, which is our site hosted on web server.**
+* Open browser and input "localhost" as the URL, press Enter and you are good to go!
